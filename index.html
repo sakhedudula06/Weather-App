@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Weatherly</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="/images/logo.png" class="logo">
+            <p class="logo-text">Weatherly</p>
+            <input placeholder="Search for a city" value="" class="search-input">
+        </div>
+
+        <div class="header-right">
+            <button class="temp-button">&deg;C/&deg;F</button>
+        </div>
+        
+    </header>
+    <main>
+        <div>
+            <div>
+                <div>
+                    <p id="location">London, UK</p>
+                    <p id="day-time">Monday, 10:42 AM</p>
+                </div>
+
+                <div>
+                    <div>
+                        <p id="temperature">15&deg;C</p>
+                        <p id="temperature-info">Partly Cloudy. Feels Like 13&deg;C. High: 18&deg;C Low: 9&deg;C</p>
+                    </div>
+                    <div>
+                        <img>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="weather-detailed-info">
+                <div>
+                    <img src="/images/icons8-humidity-50.png" class="weather-icons">
+                    <p></p>
+                    <P>Humidity</P>
+                </div>
+                <div>
+                    <img src="/images/icons8-wind-50.png" class="weather-icons">
+                    <p></p>
+                    <P>Wind Speed</P>
+                </div>
+                <div>
+                    <img src="/images/icons8-sun-50.png" class="weather-icons">
+                    <p></p>
+                    <P>UV Index</P>
+                </div>
+                <div>
+                    <img src="/images/icons8-visibility-50.png" class="weather-icons">
+                    <p></p>
+                    <P>Visibility</P>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
