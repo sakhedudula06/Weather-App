@@ -16,7 +16,8 @@
         <div class="header-left">
             <img src="/images/logo.png" class="logo">
             <p class="logo-text">Weatherly</p>
-            <input placeholder="Search for a city" value="" class="search-input">
+            <input placeholder="Search for a city" class="search-input" id="search-input" name="location">
+            <input type="submit" id="submit-button" onclick="searchLocation(value);">
         </div>
 
         <div class="header-right">
@@ -28,45 +29,101 @@
         <div class="main-weather">
             <div class="weather-info">
                 <div class="temperature-location-info">
-                    <p id="location">London, UK</p>
-                    <p id="day-time">Monday, 10:42 AM</p>
+                    <p id="location"></p>
+                    <p id="day-time"></p>
                 </div>
 
-                <div class="temperature-more-info">
+                <div class="temperature-more-info" id="temperature-more-info">
                     <div class="temperature-more-detailed-info">
-                        <p id="temperature">15&deg;C</p>
-                        <p id="temperature-info">Partly Cloudy. Feels Like 13&deg;C. High: 18&deg;C Low: 9&deg;C</p>
+                        <p id="temperature"></p>
+                        <p id="temperature-info"></p>
                     </div>
                     <div>
-                        <img id="weather-img" src="/images/icons8-partly-cloudy-day.gif">
+                        <img id="weather-img">
                     </div>
                 </div>
                 
             </div>
             
-            <div class="weather-detailed-info">
+            <div class="weather-detailed-info" id="weather-detailed-info">
+                <div class="weather-detailed-info-box" id="weather-detailed-info-box">
+                    <img class="weather-icons" id="humidity-image">
+                    <p id="humidity" class="units-info"></p>
+                    <p id="humidity-info" class="units-name"></p>
+                </div>
                 <div class="weather-detailed-info-box">
-                    <img src="/images/icons8-humidity-50.png" class="weather-icons">
-                    <p></p>
-                    <P>Humidity</P>
+                    <img id="wind-image" class="weather-icons">
+                    <p id="wind-speed" class="units-info"></p>
+                    <p id="wind-speed-info" class="units-name"></p>
                 </div>
-                <div class="weather-detailed-info-box"></div>>
-                    <img src="/images/icons8-wind-50.png" class="weather-icons">
-                    <p></p>
-                    <P>Wind Speed</P>
+                <div class="weather-detailed-info-box">
+                    <img id="rain-image" class="weather-icons">
+                    <p id="rain-text" class="units-info"></p>
+                    <p id="rain-info" class="units-name"></p>
                 </div>
-                <div class="weather-detailed-info-box"></div>>
-                    <img src="/images/icons8-sun-50.png" class="weather-icons">
-                    <p></p>
-                    <P>UV Index</P>
+                <div class="weather-detailed-info-box">
+                    <img class="weather-icons" id="wind-direction-image">
+                    <p id="wind-direction" class="units-info"></p>
+                    <p id="wind-direction-info" class="units-name"></p>
                 </div>
-                <div class="weather-detailed-info-box">>
-                    <img src="/images/icons8-visibility-50.png" class="weather-icons">
-                    <p></p>
-                    <P>Visibility</P>
+            </div>
+        </div>
+
+        <div class="weekly-forecast-box">
+            <p class="weekly-forecast-text" id="weekly-forecast-text"></p>
+            <div class="week-days-forecast">
+                <div class="week-days-forecast-box">
+                    <p class="day-of-the-week" id="first-day"></p>
+                    <img class="day-of-the-week-weather-image" id="first-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="first-day-minimum-temperature">12</p>
+                    </div>
+                </div>
+                <div class="week-days-forecast-box">
+                    <p class="day-of-the-week" id="second-day"></p>
+                    <img class="day-of-the-week-weather-image" id="second-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature"></p>
+                    <p class="minimum-temperature"></p>
+                    </div>
+                </div>
+                <div class="week-days-forecast-box">
+                    <p class="day-of-the-week" id="third-day"></p>
+                    <img class="day-of-the-week-weather-image" id="third-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature"></p>
+                    <p class="minimum-temperature"></p>
+                    </div>
+                </div>
+                <div class="week-days-forecast-box">
+                    <p class="day-of-the-week" id="fourth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fourth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature"></p>
+                    <p class="minimum-temperature"></p>
+                    </div>
+                </div>
+                <div class="week-days-forecast-box">
+                    <p class="day-of-the-week" id="fifth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fifth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature"></p>
+                    <p class="minimum-temperature"></p>
+                    </div>
+                </div>
+                <div class="week-days-forecast-box">
+                    <p class="day-of-the-week" id="sixth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="sixth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature"></p>
+                    <p class="minimum-temperature"></p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
