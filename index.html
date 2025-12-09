@@ -16,7 +16,7 @@
         <div class="header-left">
             <img src="/images/logo.png" class="logo">
             <p class="logo-text">Weatherly</p>
-            <input placeholder="Search for a city" class="search-input" id="search-input" name="location">
+            <input placeholder="Search for a city" class="search-input" id="search-input" name="location" onkeydown="enterKey(event);">
             <input type="submit" id="submit-button" onclick="searchLocation(value);">
         </div>
 
@@ -77,47 +77,47 @@
                     <img class="day-of-the-week-weather-image" id="first-day-image">
                     <div class="max-min-temperature">
                         <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
-                    <p class="minimum-temperature" id="first-day-minimum-temperature">12</p>
+                    <p class="minimum-temperature" id="first-day-minimum-temperature"></p>
                     </div>
                 </div>
                 <div class="week-days-forecast-box">
                     <p class="day-of-the-week" id="second-day"></p>
                     <img class="day-of-the-week-weather-image" id="second-day-image">
                     <div class="max-min-temperature">
-                        <p class="maximum-temperature"></p>
-                    <p class="minimum-temperature"></p>
+                        <p class="maximum-temperature" id="second-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="second-day-minimum-temperature"></p>
                     </div>
                 </div>
                 <div class="week-days-forecast-box">
                     <p class="day-of-the-week" id="third-day"></p>
                     <img class="day-of-the-week-weather-image" id="third-day-image">
                     <div class="max-min-temperature">
-                        <p class="maximum-temperature"></p>
-                    <p class="minimum-temperature"></p>
+                        <p class="maximum-temperature" id="third-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="third-day-minimum-temperature"></p>
                     </div>
                 </div>
                 <div class="week-days-forecast-box">
                     <p class="day-of-the-week" id="fourth-day"></p>
                     <img class="day-of-the-week-weather-image" id="fourth-day-image">
                     <div class="max-min-temperature">
-                        <p class="maximum-temperature"></p>
-                    <p class="minimum-temperature"></p>
+                        <p class="maximum-temperature" id="fourth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fourth-day-minimum-temperature"></p>
                     </div>
                 </div>
                 <div class="week-days-forecast-box">
                     <p class="day-of-the-week" id="fifth-day"></p>
                     <img class="day-of-the-week-weather-image" id="fifth-day-image">
                     <div class="max-min-temperature">
-                        <p class="maximum-temperature"></p>
-                    <p class="minimum-temperature"></p>
+                        <p class="maximum-temperature" id="fifth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fifth-day-minimum-temperature"></p>
                     </div>
                 </div>
                 <div class="week-days-forecast-box">
                     <p class="day-of-the-week" id="sixth-day"></p>
                     <img class="day-of-the-week-weather-image" id="sixth-day-image">
                     <div class="max-min-temperature">
-                        <p class="maximum-temperature"></p>
-                    <p class="minimum-temperature"></p>
+                        <p class="maximum-temperature" id="sixth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="sixth-day-minimum-temperature"></p>
                     </div>
                 </div>
             </div>
