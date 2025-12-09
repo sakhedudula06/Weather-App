@@ -3,7 +3,9 @@
     "version": "1.0.0",
     "description": "Look for the Weather in your location",
     "permissions": [
-        "geolocation"
+        "geolocation",
+        "search",
+        "devtools"
     ],
     "manifest_version": 3,
     "author": "Sakhekile Dudula",
