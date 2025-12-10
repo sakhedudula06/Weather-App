@@ -914,9 +914,8 @@ function getLocation(position) {
 
 geolocator();
 
-
-searchWeather.addEventListener("keydown", function enterKey(event) {
+submitButton.addEventListener('keyup', function(event) {
   if (event.key === 'Enter') {
-    clickedSubmit;
-  };
+     submitButton.click();
+  }
 });
