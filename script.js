@@ -208,6 +208,9 @@ const weather_codes = {
 };
 
 const searchWeather = document.getElementById("search-input");
+
+const submitButton = document.getElementById("submit-button");
+
 const displayLocation = document.getElementById("location");
 const temperatureTxt = document.getElementById("temperature");
 const whatDay = document.getElementById("day-time");
@@ -769,13 +772,13 @@ function getDayOfTheWeek(data) {
   }
 }
 
-function searchLocation() {
+submitButton.addEventListener("click", function searchLocation() {
 
   const searchValue = searchWeather.value;
 
   fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${searchValue}`).then(res => res.json()).then(data => {
     console.log(data.results);
-    displayLocation.innerHTML = `${data.results[0].name},${data.results[0].country}`;
+    displayLocation.innerHTML = `${data.results[0].name}, ${data.results[0].admin1}, ${data.results[0].country}`;
 
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${data.results[0].latitude}&longitude=${data.results[0].longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,rain,precipitation,wind_direction_10m,is_day`).then(res => res.json()).then(data => {
       console.log(data);
@@ -825,7 +828,7 @@ function searchLocation() {
       getDayOfTheWeek(data);
     })
   });
-};
+});
 
 function geolocator() {
   if (navigator.geolocation) {
@@ -844,9 +847,10 @@ function getLocation(position) {
 
     const geoLocationName = data.geonames[0].name;
     const geoLocationCountryName = data.geonames[0].countryName;
+    const geolocationProvince = data .geonames[0].adminName1;
     const geoLocationCountryCode = data.geonames[0].countryCode;
 
-    displayLocation.innerHTML = `${geoLocationName},${geoLocationCountryName}`;
+    displayLocation.innerHTML = `${geoLocationName}, ${geolocationProvince}, ${geoLocationCountryName}`;
 
     fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${geoLocationName}&countryCode=${geoLocationCountryCode}`).then(res => res.json()).then(data => {
       console.log(data);
@@ -906,8 +910,9 @@ function getLocation(position) {
 
 geolocator();
 
-function enterKey(event) {
+
+searchWeather.addEventListener("keydown", function enterKey(event) {
   if (event.key === 'Enter') {
     searchLocation();
   };
-};
+});
