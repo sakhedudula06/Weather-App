@@ -4,8 +4,7 @@
     "description": "Look for the Weather in your location",
     "permissions": [
         "geolocation",
-        "search",
-        "devtools"
+        "search"
     ],
     "manifest_version": 3,
     "author": "Sakhekile Dudula",

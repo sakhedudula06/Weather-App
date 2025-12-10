@@ -283,7 +283,11 @@ function getDayOfTheWeek(data) {
   const hours = d.getHours();
   const minutes = d.getMinutes();
 
-  whatDay.innerHTML = `${dayCodes[dayNumber]}, ` + `${hours}:` + `${minutes}` + ` PM`;
+  if(minutes < 10){
+    whatDay.innerHTML = `${dayCodes[dayNumber]}, ` + `${hours}:` + `0${minutes}` + ` PM`;
+  }else{
+    whatDay.innerHTML = `${dayCodes[dayNumber]}, ` + `${hours}:` + `${minutes}` + ` PM`;
+  }
 
   if (dayCodes[dayNumber] === "Sunday") {
 
@@ -772,7 +776,7 @@ function getDayOfTheWeek(data) {
   }
 }
 
-submitButton.addEventListener("click", function searchLocation() {
+const clickedSubmit = submitButton.addEventListener("click", function searchLocation() {
 
   const searchValue = searchWeather.value;
 
@@ -786,7 +790,7 @@ submitButton.addEventListener("click", function searchLocation() {
       temperatureTxt.innerHTML = `${Math.ceil(data.current.temperature_2m)}` + `${data.current_units.temperature_2m}`;
       temperatureInfo.innerHTML = `${weather_codes[data.current.weather_code].name}`;
 
-      data.current.is_day === '1' ? tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day}` : tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night}`;
+      data.current.is_day === 1 ? tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day}` : tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night}`;
 
       //Styles
       weatherDetailsInfo.style.background = 'white';
@@ -863,7 +867,7 @@ function getLocation(position) {
         temperatureTxt.innerHTML = `${Math.ceil(data.current.temperature_2m)}` + `${data.current_units.temperature_2m}`;
         temperatureInfo.innerHTML = `${weather_codes[data.current.weather_code].name}`;
 
-        data.current.is_day === '1' ? tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day}` : tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night}`;
+        data.current.is_day === 1 ? tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day}` : tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night}`;
 
         //Styles
         weatherDetailsInfo.style.background = 'white';
@@ -913,6 +917,6 @@ geolocator();
 
 searchWeather.addEventListener("keydown", function enterKey(event) {
   if (event.key === 'Enter') {
-    searchLocation();
+    clickedSubmit;
   };
 });
