@@ -520,6 +520,13 @@ const searchWeather = document.getElementById("search-input");
 
 const submitButton = document.getElementById("submit-button");
 
+const countryPicture = document.getElementById("country-picture");
+const countryName = document.getElementById("country-name");
+const cityName = document.getElementById("city-name");
+const admin1 = document.getElementById("admin1");
+const admin2 = document.getElementById("admin2");
+const resultsBox = document.getElementById("results-box");
+
 const displayLocation = document.getElementById("location");
 const temperatureTxt = document.getElementById("temperature");
 const whatDay = document.getElementById("day-time");
@@ -1436,11 +1443,154 @@ const clickedSubmit = submitButton.addEventListener(
   }
 );
 
-const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function searchLocation(){
+const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function searchLocation(event){
 
-  
+  const value = searchWeather.value;
 
-  fetch(`http://api.geonames.org/addressJSON?lat=52.358&lng=4.881&username=sakhe_dudula`).then().then()
+  fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${value}&count=5&language=en&format=json`).then((res)=>res.json()).then((data)=>{
+    console.log(data);
+    console.log(Object.keys(data.results).length);
+    //console.log(countryCodes[countryNameFromResults]);
+
+    if(value===""){
+      resultsBox.innerHTM = "";
+    }
+
+    if(Object.keys(data.results).length == 1){
+      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+      <div id="result-1" class="results">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <p id="country-name">${data.results[0].country}</p>
+                <p id="city-name">${data.results[0].name}</</p>
+                <p id="admin1">${data.results[0].admin1}</</p>
+                <p id="admin2">${data.results[0].admin2}</p>
+            </div>`
+    }
+
+    if(Object.keys(data.results).length == 2){
+      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+      <div id="result-1" class="results">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <p id="country-name">${data.results[0].country}</p>
+                <p id="city-name">${data.results[0].name}</p>
+                <p id="admin1">${data.results[0].admin1}</p>
+                <p id="admin2">${data.results[0].admin2}</p>
+            </div>
+
+            <div id="result-2" class="results">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <p id="country-name2">${data.results[1].country}</p>
+                <p id="city-name2">${data.results[1].name}</p>
+                <p id="admin1-2">${data.results[1].admin1}</p>
+                <p id="admin2-2">${data.results[1].admin2}</p>
+            </div>`
+    }
+
+    if(Object.keys(data.results).length == 3){
+      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+      <div id="result-1" class="results">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <p id="country-name">${data.results[0].country}</p>
+                <p id="city-name">${data.results[0].name}</p>
+                <p id="admin1">${data.results[0].admin1}</p>
+                <p id="admin2">${data.results[0].admin2}</p>
+            </div>
+
+            <div id="result-2" class="results">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <p id="country-name2">${data.results[1].country}</p>
+                <p id="city-name2">${data.results[1].name}</p>
+                <p id="admin1-2">${data.results[1].admin1}</p>
+                <p id="admin2-2">${data.results[1].admin2}</p>
+            </div>
+
+            <div id="result-3" class="results">
+                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
+                <p id="country-name3">${data.results[2].country}</p>
+                <p id="city-name3">${data.results[2].name}</p>
+                <p id="admin1-3">${data.results[2].admin1}</p>
+                <p id="admin2-3">${data.results[2].admin2}</p>
+            </div>`
+    }
+
+    if(Object.keys(data.results).length == 4){
+      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+      <div id="result-1" class="results">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <p id="country-name">${data.results[0].country}</p>
+                <p id="city-name">${data.results[0].name}</p>
+                <p id="admin1">${data.results[0].admin1}</p>
+                <p id="admin2">${data.results[0].admin2}</p>
+            </div>
+
+            <div id="result-2" class="results">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <p id="country-name2">${data.results[1].country}</p>
+                <p id="city-name2">${data.results[1].name}</p>
+                <p id="admin1-2">${data.results[1].admin1}</p>
+                <p id="admin2-2">${data.results[1].admin2}</p>
+            </div>
+
+            <div id="result-3" class="results">
+                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
+                <p id="country-name3">${data.results[2].country}</p>
+                <p id="city-name3">${data.results[2].name}</p>
+                <p id="admin1-3">${data.results[2].admin1}</p>
+                <p id="admin2-3">${data.results[2].admin2}</p>
+            </div>
+
+            <div id="result-4" class="results">
+                <img id="country-picture4" src="https://flagcdn.com/${countryCodes[data.results[3].country]}.svg" class="country-picture">
+                <p id="country-name4">${data.results[3].country}</p>
+                <p id="city-name4">${data.results[3].name}</p>
+                <p id="admin1-4">${data.results[3].admin1}</p>
+                <p id="admin2-4">${data.results[3].admin2}</p>
+            </div>`
+    }
+
+    if(Object.keys(data.results).length == 5){
+      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+      <div id="result-1" class="results">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <p id="country-name">${data.results[0].country}</p>
+                <p id="city-name">${data.results[0].name}</p>
+                <p id="admin1">${data.results[0].admin1}</p>
+                <p id="admin2">${data.results[0].admin2}</p>
+            </div>
+
+            <div id="result-2" class="results">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <p id="country-name2">${data.results[1].country}</p>
+                <p id="city-name2">${data.results[1].name}</p>
+                <p id="admin1-2">${data.results[1].admin1}</p>
+                <p id="admin2-2">${data.results[1].admin2}</p>
+            </div>
+
+            <div id="result-3" class="results">
+                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
+                <p id="country-name3">${data.results[2].country}</p>
+                <p id="city-name3">${data.results[2].name}</p>
+                <p id="admin1-3">${data.results[2].admin1}</p>
+                <p id="admin2-3">${data.results[2].admin2}</p>
+            </div>
+
+            <div id="result-4" class="results">
+                <img id="country-picture4" src="https://flagcdn.com/${countryCodes[data.results[3].country]}.svg" class="country-picture">
+                <p id="country-name4">${data.results[3].country}</p>
+                <p id="city-name4">${data.results[3].name}</p>
+                <p id="admin1-4">${data.results[3].admin1}</p>
+                <p id="admin2-4">${data.results[3].admin2}</p>
+            </div>
+
+            <div id="result-5" class="results">
+                <img id="country-picture5" src="https://flagcdn.com/${countryCodes[data.results[4].country]}.svg" class="country-picture">
+                <p id="country-name5">${data.results[3].country}</p>
+                <p id="city-name5">${data.results[4].name}</p>
+                <p id="admin1-5">${data.results[4].admin1}</p>
+                <p id="admin2-5">${data.results[4].admin2}</p>
+            </div>`
+    }
+  })
 
 })
 

@@ -7,8 +7,8 @@ body {
 header {
   width: 80%;
   display: flex;
-  flex-direction: row;
-  align-self: center;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   border-bottom: 1px solid rgba(128, 128, 128, 0.2);
   justify-content: space-between;
@@ -20,8 +20,7 @@ header {
 }
 
 .header-left {
-  width: 90%;
-  max-width: 100%;
+  max-width: 90%;
   display: flex;
   flex-direction: row;
   gap: 15px;
@@ -79,6 +78,28 @@ header {
 
 #submit-button:active{
   background-color: white;
+}
+
+.results-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+}
+
+.results{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #f1f3f4;
+  padding: 20px;
+}
+
+.country-picture{
+  width: 50px;
 }
 
 .temp-button {

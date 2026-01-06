@@ -12,23 +12,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="header-left">
             <div class="header-left-logo">
                 <img src="/images/logo.png" class="logo">
                 <p class="logo-text">Weatherly</p>
             </div>
-            <input placeholder="Search for a city" class="search-input" id="search-input" name="location">
+            <input placeholder="Search for a city(City, Country)" class="search-input" id="search-input" name="location">
             <input class="submit-button" type="submit" id="submit-button" placeholder="Search">
         </div>
 
-        <div>
-            <div>
-                <img>
-                <p id="name"></p>
-                <p id="admin1"></p>
-                <p id="admin2"></p>
-                <p id="admin3"></p>
+        <div class="results-box" id="results-box">
+            <div id="result-1" class="results">
+                <img id="country-picture" src="https://flagcdn.com/za.svg" class="country-picture">
+                <p id="country-name">South Africa</p>
+                <p id="city-name">Cape Town</p>
+                <p id="admin1">Western Cape</p>
+                <p id="admin2">City of Cape Town</p>
+            </div>
+
+            <div id="result-2" class="results">
+                <img id="country-picture2" src="https://flagcdn.com/za.svg" class="country-picture">
+                <p id="country-name2">${data.results[1].country}</p>
+                <p id="city-name2">${data.results[1].name}</p>
+                <p id="admin1-2">${data.results[1].admin1}</p>
+                <p id="admin2-2">${data.results[1].admin2}</p>
+            </div>
+
+            <div id="result-3" class="results">
+                <img id="country-picture3" src="https://flagcdn.com/za.svg" class="country-picture">
+                <p id="country-name3">${data.results[2].country}</p>
+                <p id="city-name3">${data.results[2].name}</p>
+                <p id="admin1-3">${data.results[2].admin1}</p>
+                <p id="admin2-3">${data.results[2].admin2}</p>
+            </div>
+
+            <div id="result-4" class="results">
+                <img id="country-picture4" src="https://flagcdn.com/za.svg" class="country-picture">
+                <p id="country-name4">${data.results[3].country}</p>
+                <p id="city-name4">${data.results[3].name}</p>
+                <p id="admin1-4">${data.results[3].admin1}</p>
+                <p id="admin2-4">${data.results[3].admin2}</p>
+            </div>
+
+            <div id="result-5" class="results">
+                <p>${Object.keys(data.results).length} result for "${value}"</p>
+                <img id="country-picture5" src="https://flagcdn.com/za.svg" class="country-picture">
+                <p id="country-name5">${data.results[3].country}</p>
+                <p id="city-name5">${data.results[4].name}</p>
+                <p id="admin1-5">${data.results[4].admin1}</p>
+                <p id="admin2-5">${data.results[4].admin2}</p>
             </div>
         </div>
     </header>
