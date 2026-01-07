@@ -89,13 +89,19 @@ header {
 }
 
 .results{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 1400px;
   background-color: #f1f3f4;
   padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.results:hover{
+  background-color: #ffffff;
 }
 
 .country-picture{
@@ -152,6 +158,8 @@ main {
   font-size: 13px;
   color: gray;
 }
+
+
 
 .temperature-more-info {
   display: flex;

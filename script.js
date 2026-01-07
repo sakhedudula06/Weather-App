@@ -636,9 +636,8 @@ function getDayOfTheWeek(data) {
     firstDay.innerHTML = "Mon";
 
     //Icon
-    firstDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[1]].icons.day
-    }`;
+    firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     firstDayMaximumTemperature.innerHTML =
@@ -653,9 +652,8 @@ function getDayOfTheWeek(data) {
     //Second Day
     secondDay.innerHTML = "Tue";
     //Icon
-    secondDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[2]].icons.day
-    }`;
+    secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     secondDayMaximumTemperature.innerHTML =
@@ -670,9 +668,8 @@ function getDayOfTheWeek(data) {
     //Third Day
     thirdDay.innerHTML = "Wed";
     //Icon
-    thirdDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[3]].icons.day
-    }`;
+    thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     thirdDayMaximumTemperature.innerHTML =
@@ -687,9 +684,8 @@ function getDayOfTheWeek(data) {
     //Fourth Day
     fourthDay.innerHTML = "Thu";
     //Icon
-    fourthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[4]].icons.day
-    }`;
+    fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fourthDayMaximumTemperature.innerHTML =
@@ -704,9 +700,8 @@ function getDayOfTheWeek(data) {
     //Fifth Day
     fifthDay.innerHTML = "Fri";
     //Icon
-    fifthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[5]].icons.day
-    }`;
+    fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fifthDayMaximumTemperature.innerHTML =
@@ -721,9 +716,8 @@ function getDayOfTheWeek(data) {
     //Sixth Day
     sixthDay.innerHTML = "Sat";
     //Icon
-    sixthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[6]].icons.day
-    }`;
+    sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     sixthDayMaximumTemperature.innerHTML =
@@ -739,9 +733,8 @@ function getDayOfTheWeek(data) {
     firstDay.innerHTML = "Tue";
 
     //Icon
-    firstDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[1]].icons.day
-    }`;
+    firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     firstDayMaximumTemperature.innerHTML =
@@ -756,9 +749,8 @@ function getDayOfTheWeek(data) {
     //Second Day
     secondDay.innerHTML = "Wed";
     //Icon
-    secondDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[2]].icons.day
-    }`;
+    secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     secondDayMaximumTemperature.innerHTML =
@@ -773,9 +765,8 @@ function getDayOfTheWeek(data) {
     //Third Day
     thirdDay.innerHTML = "Thu";
     //Icon
-    thirdDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[3]].icons.day
-    }`;
+    thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     thirdDayMaximumTemperature.innerHTML =
@@ -790,9 +781,8 @@ function getDayOfTheWeek(data) {
     //Fourth Day
     fourthDay.innerHTML = "Fri";
     //Icon
-    fourthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[4]].icons.day
-    }`;
+    fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fourthDayMaximumTemperature.innerHTML =
@@ -807,9 +797,8 @@ function getDayOfTheWeek(data) {
     //Fifth Day
     fifthDay.innerHTML = "Sat";
     //Icon
-    fifthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[5]].icons.day
-    }`;
+    fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fifthDayMaximumTemperature.innerHTML =
@@ -824,9 +813,8 @@ function getDayOfTheWeek(data) {
     //Sixth Day
     sixthDay.innerHTML = "Sun";
     //Icon
-    sixthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[6]].icons.day
-    }`;
+    sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     sixthDayMaximumTemperature.innerHTML =
@@ -842,9 +830,8 @@ function getDayOfTheWeek(data) {
     firstDay.innerHTML = "Wed";
 
     //Icon
-    firstDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[1]].icons.day
-    }`;
+    firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     firstDayMaximumTemperature.innerHTML =
@@ -859,9 +846,8 @@ function getDayOfTheWeek(data) {
     //Second Day
     secondDay.innerHTML = "Thu";
     //Icon
-    secondDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[2]].icons.day
-    }`;
+    secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     secondDayMaximumTemperature.innerHTML =
@@ -876,9 +862,8 @@ function getDayOfTheWeek(data) {
     //Third Day
     thirdDay.innerHTML = "Fri";
     //Icon
-    thirdDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[3]].icons.day
-    }`;
+    thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     thirdDayMaximumTemperature.innerHTML =
@@ -893,9 +878,8 @@ function getDayOfTheWeek(data) {
     //Fourth Day
     fourthDay.innerHTML = "Sat";
     //Icon
-    fourthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[4]].icons.day
-    }`;
+    fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fourthDayMaximumTemperature.innerHTML =
@@ -910,9 +894,8 @@ function getDayOfTheWeek(data) {
     //Fifth Day
     fifthDay.innerHTML = "Sun";
     //Icon
-    fifthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[5]].icons.day
-    }`;
+    fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fifthDayMaximumTemperature.innerHTML =
@@ -927,9 +910,8 @@ function getDayOfTheWeek(data) {
     //Sixth Day
     sixthDay.innerHTML = "Mon";
     //Icon
-    sixthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[6]].icons.day
-    }`;
+    sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     sixthDayMaximumTemperature.innerHTML =
@@ -945,9 +927,8 @@ function getDayOfTheWeek(data) {
     firstDay.innerHTML = "Thu";
 
     //Icon
-    firstDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[1]].icons.day
-    }`;
+    firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     firstDayMaximumTemperature.innerHTML =
@@ -962,9 +943,8 @@ function getDayOfTheWeek(data) {
     //Second Day
     secondDay.innerHTML = "Fri";
     //Icon
-    secondDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[2]].icons.day
-    }`;
+    secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     secondDayMaximumTemperature.innerHTML =
@@ -979,9 +959,8 @@ function getDayOfTheWeek(data) {
     //Third Day
     thirdDay.innerHTML = "Sat";
     //Icon
-    thirdDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[3]].icons.day
-    }`;
+    thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     thirdDayMaximumTemperature.innerHTML =
@@ -996,9 +975,8 @@ function getDayOfTheWeek(data) {
     //Fourth Day
     fourthDay.innerHTML = "Sun";
     //Icon
-    fourthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[4]].icons.day
-    }`;
+    fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fourthDayMaximumTemperature.innerHTML =
@@ -1013,9 +991,8 @@ function getDayOfTheWeek(data) {
     //Fifth Day
     fifthDay.innerHTML = "Mon";
     //Icon
-    fifthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[5]].icons.day
-    }`;
+    fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fifthDayMaximumTemperature.innerHTML =
@@ -1030,9 +1007,8 @@ function getDayOfTheWeek(data) {
     //Sixth Day
     sixthDay.innerHTML = "Tue";
     //Icon
-    sixthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[6]].icons.day
-    }`;
+    sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     sixthDayMaximumTemperature.innerHTML =
@@ -1048,9 +1024,8 @@ function getDayOfTheWeek(data) {
     firstDay.innerHTML = "Fri";
 
     //Icon
-    firstDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[1]].icons.day
-    }`;
+    firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     firstDayMaximumTemperature.innerHTML =
@@ -1065,9 +1040,8 @@ function getDayOfTheWeek(data) {
     //Second Day
     secondDay.innerHTML = "Sat";
     //Icon
-    secondDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[2]].icons.day
-    }`;
+    secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     secondDayMaximumTemperature.innerHTML =
@@ -1082,9 +1056,8 @@ function getDayOfTheWeek(data) {
     //Third Day
     thirdDay.innerHTML = "Sun";
     //Icon
-    thirdDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[3]].icons.day
-    }`;
+    thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     thirdDayMaximumTemperature.innerHTML =
@@ -1099,9 +1072,8 @@ function getDayOfTheWeek(data) {
     //Fourth Day
     fourthDay.innerHTML = "Mon";
     //Icon
-    fourthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[4]].icons.day
-    }`;
+    fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fourthDayMaximumTemperature.innerHTML =
@@ -1116,9 +1088,8 @@ function getDayOfTheWeek(data) {
     //Fifth Day
     fifthDay.innerHTML = "Tue";
     //Icon
-    fifthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[5]].icons.day
-    }`;
+    fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fifthDayMaximumTemperature.innerHTML =
@@ -1133,9 +1104,8 @@ function getDayOfTheWeek(data) {
     //Sixth Day
     sixthDay.innerHTML = "Wed";
     //Icon
-    sixthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[6]].icons.day
-    }`;
+    sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     sixthDayMaximumTemperature.innerHTML =
@@ -1151,9 +1121,8 @@ function getDayOfTheWeek(data) {
     firstDay.innerHTML = "Sat";
 
     //Icon
-    firstDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[1]].icons.day
-    }`;
+    firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     firstDayMaximumTemperature.innerHTML =
@@ -1168,9 +1137,8 @@ function getDayOfTheWeek(data) {
     //Second Day
     secondDay.innerHTML = "Sun";
     //Icon
-    secondDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[2]].icons.day
-    }`;
+    secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     secondDayMaximumTemperature.innerHTML =
@@ -1185,9 +1153,8 @@ function getDayOfTheWeek(data) {
     //Third Day
     thirdDay.innerHTML = "Mon";
     //Icon
-    thirdDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[3]].icons.day
-    }`;
+    thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     thirdDayMaximumTemperature.innerHTML =
@@ -1202,9 +1169,8 @@ function getDayOfTheWeek(data) {
     //Fourth Day
     fourthDay.innerHTML = "Tue";
     //Icon
-    fourthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[4]].icons.day
-    }`;
+    fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fourthDayMaximumTemperature.innerHTML =
@@ -1219,9 +1185,8 @@ function getDayOfTheWeek(data) {
     //Fifth Day
     fifthDay.innerHTML = "Wed";
     //Icon
-    fifthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[5]].icons.day
-    }`;
+    fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fifthDayMaximumTemperature.innerHTML =
@@ -1236,9 +1201,8 @@ function getDayOfTheWeek(data) {
     //Sixth Day
     sixthDay.innerHTML = "Thu";
     //Icon
-    sixthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[6]].icons.day
-    }`;
+    sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     sixthDayMaximumTemperature.innerHTML =
@@ -1254,9 +1218,8 @@ function getDayOfTheWeek(data) {
     firstDay.innerHTML = "Sun";
 
     //Icon
-    firstDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[1]].icons.day
-    }`;
+    firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     firstDayMaximumTemperature.innerHTML =
@@ -1271,9 +1234,8 @@ function getDayOfTheWeek(data) {
     //Second Day
     secondDay.innerHTML = "Mon";
     //Icon
-    secondDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[2]].icons.day
-    }`;
+    secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     secondDayMaximumTemperature.innerHTML =
@@ -1288,9 +1250,8 @@ function getDayOfTheWeek(data) {
     //Third Day
     thirdDay.innerHTML = "Tue";
     //Icon
-    thirdDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[3]].icons.day
-    }`;
+    thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     thirdDayMaximumTemperature.innerHTML =
@@ -1305,9 +1266,8 @@ function getDayOfTheWeek(data) {
     //Fourth Day
     fourthDay.innerHTML = "Wed";
     //Icon
-    fourthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[4]].icons.day
-    }`;
+    fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fourthDayMaximumTemperature.innerHTML =
@@ -1322,9 +1282,8 @@ function getDayOfTheWeek(data) {
     //Fifth Day
     fifthDay.innerHTML = "Thu";
     //Icon
-    fifthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[5]].icons.day
-    }`;
+    fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     fifthDayMaximumTemperature.innerHTML =
@@ -1339,9 +1298,8 @@ function getDayOfTheWeek(data) {
     //Sixth Day
     sixthDay.innerHTML = "Fri";
     //Icon
-    sixthDayImage.src = `assets/${
-      weather_codes[data.daily.weather_code[6]].icons.day
-    }`;
+    sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
+      }`;
 
     //Maximum Temp For Day One
     sixthDayMaximumTemperature.innerHTML =
@@ -1355,6 +1313,98 @@ function getDayOfTheWeek(data) {
   }
 }
 
+async function loadingAnimation(){
+  const mainContent = document.getElementById("main");
+
+  mainContent.innerHTML = "";
+
+  mainContent.style.display = "block";
+  mainContent.style.margin = "auto";
+  mainContent.style.width = "50%";
+
+  let loadTime = setInterval(() => {
+    mainContent.innerHTML = `<img src="assets/loading.gif">`;
+  }, 0);
+
+  clearInterval(loadTime);
+
+}
+
+function resultsClicked(index, data) {
+
+  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${data.results[index].latitude}&longitude=${data.results[index].longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,rain,precipitation,wind_direction_10m,is_day`).then((res) => res.json()).then((data) => {
+    console.log(data);
+
+    temperatureTxt.innerHTML =
+      `${Math.ceil(data.current.temperature_2m)}` +
+      `${data.current_units.temperature_2m}`;
+    temperatureInfo.innerHTML = `${weather_codes[data.current.weather_code].name
+      }`;
+
+    data.current.is_day === 1
+      ? (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day
+        }`)
+      : (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night
+        }`);
+
+    //Styles
+    weatherDetailsInfo.style.background = "white";
+    tempImage.style.width = "150px";
+    tempImage.style.height = "150px";
+    tempImage.style.objectFit = "cover";
+    weatherDetailsInfoBox.style.display = "flex";
+    weatherDetailsInfoBox.style.flexDirection = "column";
+    weatherDetailsInfoBox.style.backgroundColor = "#ffffff";
+    weatherDetailsInfoBox.style.justifyContent = "center";
+    weatherDetailsInfoBox.style.alignItems = "flex-start";
+    weatherDetailsInfoBox.style.padding = "15px 0 15px 10px";
+    temperatureMoreInfo.style.backgroundColor = "white";
+
+    humidityText.innerHTML =
+      `${data.daily.precipitation_probability_max[0]}` +
+      `${data.daily_units.precipitation_probability_max}`;
+
+    windSpeed.innerHTML = `${data.current.wind_speed_10m}km/h`;
+
+    const degree = data.current.wind_direction_10m;
+
+    const directions = [
+      "North",
+      "North East",
+      "East",
+      "South East",
+      "South",
+      "South West",
+      "West",
+      "North West",
+    ];
+    const directionIndex = Math.round(degree / 45) % 8;
+    windDirection.innerHTML = `${directions[directionIndex]}`;
+    windDirectionImage.src = "images/icons8-weather-station-wind.gif";
+    windDirectionInfo.innerHTML = "Wind Direction";
+
+    humidityInfo.innerHTML = "Precipitation";
+    humidityImage.src = "images/icons8-precipitation (1).gif";
+
+    windSpeedInfo.innerHTML = "Wind Speed";
+    windImage.src = "images/icons8-windsock.gif";
+
+    rainImage.src = "images/icons8-rain-gauge.gif";
+    rainText.innerHTML =
+      `${data.current.rain}` + `${data.current_units.rain}`;
+    rainInfo.innerHTML = "Rain";
+
+    weeklyForecastText.innerHTML = "6 Day Forecast";
+
+    getDayOfTheWeek(data);
+  })
+
+  displayLocation.innerHTML = `${data.results[index].name}, ${data.results[index].admin1}, ${data.results[index].country}`;
+};
+
+//resultsClicked(1, data);
+
+/*
 const clickedSubmit = submitButton.addEventListener(
   "click",
   function searchLocation() {
@@ -1376,16 +1426,13 @@ const clickedSubmit = submitButton.addEventListener(
             temperatureTxt.innerHTML =
               `${Math.ceil(data.current.temperature_2m)}` +
               `${data.current_units.temperature_2m}`;
-            temperatureInfo.innerHTML = `${
-              weather_codes[data.current.weather_code].name
-            }`;
+            temperatureInfo.innerHTML = `${weather_codes[data.current.weather_code].name
+              }`;
 
             data.current.is_day === 1
-              ? (tempImage.src = `assets/${
-                  weather_codes[data.current.weather_code].icons.day
+              ? (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day
                 }`)
-              : (tempImage.src = `assets/${
-                  weather_codes[data.current.weather_code].icons.night
+              : (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night
                 }`);
 
             //Styles
@@ -1442,154 +1489,322 @@ const clickedSubmit = submitButton.addEventListener(
       });
   }
 );
+*/
 
-const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function searchLocation(event){
+const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function searchLocation(event) {
 
   const value = searchWeather.value;
 
-  fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${value}&count=5&language=en&format=json`).then((res)=>res.json()).then((data)=>{
+  fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${value}&count=5&language=en&format=json`).then((res) => res.json()).then((data) => {
     console.log(data);
     console.log(Object.keys(data.results).length);
     //console.log(countryCodes[countryNameFromResults]);
 
-    if(value===""){
+    if (value === "") {
       resultsBox.innerHTM = "";
     }
 
-    if(Object.keys(data.results).length == 1){
+    if (Object.keys(data.results).length == 1) {
       resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
-      <div id="result-1" class="results">
+      <div id="table-headers" class="results">
+                <p></p>
+                <p id="country-name">Country</p>
+                <p id="city-name">Name</p>
+                <p id="admin1">Admin1</p>
+                <p id="admin2">Admin 2</p>
+            </div>
+      
+            <a id="result-1" class="results">
                 <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
                 <p id="country-name">${data.results[0].country}</p>
                 <p id="city-name">${data.results[0].name}</</p>
-                <p id="admin1">${data.results[0].admin1}</</p>
-                <p id="admin2">${data.results[0].admin2}</p>
-            </div>`
+                <p id="admin1">${data.results[0].admin1 || ""}</</p>
+                <p id="admin2">${data.results[0].admin2 || ""}</p>
+            </a>`;
+
+      const result1 = document.getElementById("result-1");
+
+      result1.addEventListener("click", () => {
+        resultsClicked(0, data);
+
+        resultsBox.innerHTML = "";
+      });
+
     }
 
-    if(Object.keys(data.results).length == 2){
+    if (Object.keys(data.results).length == 2) {
       resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
-      <div id="result-1" class="results">
+      <div id="table-headers" class="results">
+                <p></p>
+                <p id="country-name">Country</p>
+                <p id="city-name">Name</p>
+                <p id="admin1">Admin1</p>
+                <p id="admin2">Admin 2</p>
+            </div>
+      
+            <a id="result-1" class="results">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <p id="country-name">${data.results[0].country}</p>
+                <p id="city-name">${data.results[0].name}</p>
+                <p id="admin1">${data.results[0].admin1 || ""}</p>
+                <p id="admin2">${data.results[0].admin2 || ""}</p>
+            </a>
+
+            <a id="result-2" class="results">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <p id="country-name2">${data.results[1].country}</p>
+                <p id="city-name2">${data.results[1].name}</p>
+                <p id="admin1-2">${data.results[1].admin1 || ""}</p>
+                <p id="admin2-2">${data.results[1].admin2 || ""}</p>
+            </a>`;
+
+      const result1 = document.getElementById("result-1");
+
+      const result2 = document.getElementById("result-2");
+
+      result1.addEventListener("click", () => {
+        resultsClicked(0, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result2.addEventListener("click", () => {
+        resultsClicked(1, data);
+
+        resultsBox.innerHTML = "";
+      });
+    }
+
+    if (Object.keys(data.results).length == 3) {
+      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+      <div id="table-headers" class="results">
+                <p></p>
+                <p id="country-name">Country</p>
+                <p id="city-name">Name</p>
+                <p id="admin1">Admin1</p>
+                <p id="admin2">Admin 2</p>
+            </div>
+      
+            <a id="result-1" class="results">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <p id="country-name">${data.results[0].country}</p>
+                <p id="city-name">${data.results[0].name}</p>
+                <p id="admin1">${data.results[0].admin1 || ""}</p>
+                <p id="admin2">${data.results[0].admin2 || ""}</p>
+            </a>
+
+            <a id="result-2" class="results">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <p id="country-name2">${data.results[1].country}</p>
+                <p id="city-name2">${data.results[1].name}</p>
+                <p id="admin1-2">${data.results[1].admin1 || ""}</p>
+                <p id="admin2-2">${data.results[1].admin2 || ""}</p>
+            </a>
+
+            <a id="result-3" class="results">
+                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
+                <p id="country-name3">${data.results[2].country}</p>
+                <p id="city-name3">${data.results[2].name}</p>
+                <p id="admin1-3">${data.results[2].admin1 || ""}</p>
+                <p id="admin2-3">${data.results[2].admin2 || ""}</p>
+            </a>`;
+
+      const result1 = document.getElementById("result-1");
+
+      const result2 = document.getElementById("result-2");
+
+      const result3 = document.getElementById("result-3");
+
+      result1.addEventListener("click", () => {
+        resultsClicked(0, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result2.addEventListener("click", () => {
+        resultsClicked(1, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result3.addEventListener("click", () => {
+        resultsClicked(2, data);
+
+        resultsBox.innerHTML = "";
+      });
+    }
+
+    if (Object.keys(data.results).length == 4) {
+      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+      <div id="table-headers" class="results">
+                <p></p>
+                <p id="country-name">Country</p>
+                <p id="city-name">Name</p>
+                <p id="admin1">Admin1</p>
+                <p id="admin2">Admin 2</p>
+            </div>
+      
+            <a id="result-1" class="results">
                 <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
                 <p id="country-name">${data.results[0].country}</p>
                 <p id="city-name">${data.results[0].name}</p>
                 <p id="admin1">${data.results[0].admin1}</p>
                 <p id="admin2">${data.results[0].admin2}</p>
-            </div>
+            </a>
 
-            <div id="result-2" class="results">
+            <a id="result-2" class="results">
                 <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
                 <p id="country-name2">${data.results[1].country}</p>
                 <p id="city-name2">${data.results[1].name}</p>
                 <p id="admin1-2">${data.results[1].admin1}</p>
                 <p id="admin2-2">${data.results[1].admin2}</p>
-            </div>`
-    }
+            </a>
 
-    if(Object.keys(data.results).length == 3){
-      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
-      <div id="result-1" class="results">
-                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
-                <p id="country-name">${data.results[0].country}</p>
-                <p id="city-name">${data.results[0].name}</p>
-                <p id="admin1">${data.results[0].admin1}</p>
-                <p id="admin2">${data.results[0].admin2}</p>
-            </div>
-
-            <div id="result-2" class="results">
-                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
-                <p id="country-name2">${data.results[1].country}</p>
-                <p id="city-name2">${data.results[1].name}</p>
-                <p id="admin1-2">${data.results[1].admin1}</p>
-                <p id="admin2-2">${data.results[1].admin2}</p>
-            </div>
-
-            <div id="result-3" class="results">
+            <a id="result-3" class="results">
                 <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
                 <p id="country-name3">${data.results[2].country}</p>
                 <p id="city-name3">${data.results[2].name}</p>
                 <p id="admin1-3">${data.results[2].admin1}</p>
                 <p id="admin2-3">${data.results[2].admin2}</p>
-            </div>`
-    }
+            </a>
 
-    if(Object.keys(data.results).length == 4){
-      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
-      <div id="result-1" class="results">
-                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
-                <p id="country-name">${data.results[0].country}</p>
-                <p id="city-name">${data.results[0].name}</p>
-                <p id="admin1">${data.results[0].admin1}</p>
-                <p id="admin2">${data.results[0].admin2}</p>
-            </div>
-
-            <div id="result-2" class="results">
-                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
-                <p id="country-name2">${data.results[1].country}</p>
-                <p id="city-name2">${data.results[1].name}</p>
-                <p id="admin1-2">${data.results[1].admin1}</p>
-                <p id="admin2-2">${data.results[1].admin2}</p>
-            </div>
-
-            <div id="result-3" class="results">
-                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
-                <p id="country-name3">${data.results[2].country}</p>
-                <p id="city-name3">${data.results[2].name}</p>
-                <p id="admin1-3">${data.results[2].admin1}</p>
-                <p id="admin2-3">${data.results[2].admin2}</p>
-            </div>
-
-            <div id="result-4" class="results">
+            <a id="result-4" class="results">
                 <img id="country-picture4" src="https://flagcdn.com/${countryCodes[data.results[3].country]}.svg" class="country-picture">
                 <p id="country-name4">${data.results[3].country}</p>
                 <p id="city-name4">${data.results[3].name}</p>
                 <p id="admin1-4">${data.results[3].admin1}</p>
                 <p id="admin2-4">${data.results[3].admin2}</p>
-            </div>`
+            </a>`;
+
+      const result1 = document.getElementById("result-1");
+
+      const result2 = document.getElementById("result-2");
+
+      const result3 = document.getElementById("result-3");
+
+      const result4 = document.getElementById("result-4");
+
+      result1.addEventListener("click", () => {
+        resultsClicked(0, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result2.addEventListener("click", () => {
+        resultsClicked(1, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result3.addEventListener("click", () => {
+        resultsClicked(2, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result4.addEventListener("click", () => {
+        resultsClicked(3, data);
+
+        resultsBox.innerHTML = "";
+      });
     }
 
-    if(Object.keys(data.results).length == 5){
+    if (Object.keys(data.results).length == 5) {
       resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
-      <div id="result-1" class="results">
+      <div id="table-headers" class="results">
+                <p></p>
+                <p id="country-name">Country</p>
+                <p id="city-name">Name</p>
+                <p id="admin1">Admin1</p>
+                <p id="admin2">Admin 2</p>
+            </div>
+      
+            <a id="result-1" class="results">
                 <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
                 <p id="country-name">${data.results[0].country}</p>
                 <p id="city-name">${data.results[0].name}</p>
                 <p id="admin1">${data.results[0].admin1}</p>
                 <p id="admin2">${data.results[0].admin2}</p>
-            </div>
+            </a>
 
-            <div id="result-2" class="results">
+            <a id="result-2" class="results">
                 <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
                 <p id="country-name2">${data.results[1].country}</p>
                 <p id="city-name2">${data.results[1].name}</p>
                 <p id="admin1-2">${data.results[1].admin1}</p>
                 <p id="admin2-2">${data.results[1].admin2}</p>
-            </div>
+            </a>
 
-            <div id="result-3" class="results">
+            <a id="result-3" class="results">
                 <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
                 <p id="country-name3">${data.results[2].country}</p>
                 <p id="city-name3">${data.results[2].name}</p>
                 <p id="admin1-3">${data.results[2].admin1}</p>
                 <p id="admin2-3">${data.results[2].admin2}</p>
-            </div>
+            </a>
 
-            <div id="result-4" class="results">
+            <a id="result-4" class="results">
                 <img id="country-picture4" src="https://flagcdn.com/${countryCodes[data.results[3].country]}.svg" class="country-picture">
                 <p id="country-name4">${data.results[3].country}</p>
                 <p id="city-name4">${data.results[3].name}</p>
                 <p id="admin1-4">${data.results[3].admin1}</p>
                 <p id="admin2-4">${data.results[3].admin2}</p>
-            </div>
+            </a>
 
-            <div id="result-5" class="results">
+            <a id="result-5" class="results">
                 <img id="country-picture5" src="https://flagcdn.com/${countryCodes[data.results[4].country]}.svg" class="country-picture">
                 <p id="country-name5">${data.results[3].country}</p>
                 <p id="city-name5">${data.results[4].name}</p>
                 <p id="admin1-5">${data.results[4].admin1}</p>
                 <p id="admin2-5">${data.results[4].admin2}</p>
-            </div>`
+            </a>`;
+
+      const result1 = document.getElementById("result-1");
+
+      const result2 = document.getElementById("result-2");
+
+      const result3 = document.getElementById("result-3");
+
+      const result4 = document.getElementById("result-4");
+
+      const result5 = document.getElementById("result-5");
+
+      result1.addEventListener("click", () => {
+        resultsClicked(0, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result2.addEventListener("click", () => {
+        resultsClicked(1, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result3.addEventListener("click", () => {
+        resultsClicked(2, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result4.addEventListener("click", () => {
+        resultsClicked(3, data);
+
+        resultsBox.innerHTML = "";
+      });
+
+      result5.addEventListener("click", () => {
+        resultsClicked(4, data);
+
+        resultsBox.innerHTML = "";
+      });
     }
+
+    const tableHeaders = document.querySelectorAll("#table-headers p").forEach(p => {
+      p.style.fontWeight = "bold"
+    })
+
+
   })
 
 })
@@ -1635,16 +1850,13 @@ function getLocation(position) {
               temperatureTxt.innerHTML =
                 `${Math.ceil(data.current.temperature_2m)}` +
                 `${data.current_units.temperature_2m}`;
-              temperatureInfo.innerHTML = `${
-                weather_codes[data.current.weather_code].name
-              }`;
+              temperatureInfo.innerHTML = `${weather_codes[data.current.weather_code].name
+                }`;
 
               data.current.is_day === 1
-                ? (tempImage.src = `assets/${
-                    weather_codes[data.current.weather_code].icons.day
+                ? (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day
                   }`)
-                : (tempImage.src = `assets/${
-                    weather_codes[data.current.weather_code].icons.night
+                : (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night
                   }`);
 
               //Styles
