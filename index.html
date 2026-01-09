@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Weatherly</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Weatherly</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
     <header id="header">
         <div class="header-left">
             <div class="header-left-logo">
-                <img src="/images/logo.png" class="logo">
+                <img src="/images/logo.png" class="logo" />
                 <p class="logo-text">Weatherly</p>
             </div>
-            <input placeholder="Search for a city(City, Country)" class="search-input" id="search-input" name="location">
-            <input class="submit-button" type="submit" id="submit-button" placeholder="Search">
+            <input placeholder="Search for a city(City, Country)" class="search-input" id="search-input"
+                name="location" />
+            <input class="submit-button" type="submit" id="submit-button" placeholder="Search" />
         </div>
 
         <div class="results-box" id="results-box"></div>
@@ -39,30 +44,29 @@
                         <p id="temperature-info"></p>
                     </div>
                     <div>
-                        <img id="weather-img">
+                        <img id="weather-img" />
                     </div>
                 </div>
-                
             </div>
-            
+
             <div class="weather-detailed-info" id="weather-detailed-info">
                 <div class="weather-detailed-info-box" id="weather-detailed-info-box">
-                    <img class="weather-icons" id="humidity-image">
+                    <img class="weather-icons" id="humidity-image" />
                     <p id="humidity" class="units-info"></p>
                     <p id="humidity-info" class="units-name"></p>
                 </div>
                 <div class="weather-detailed-info-box">
-                    <img id="wind-image" class="weather-icons">
+                    <img id="wind-image" class="weather-icons" />
                     <p id="wind-speed" class="units-info"></p>
                     <p id="wind-speed-info" class="units-name"></p>
                 </div>
                 <div class="weather-detailed-info-box">
-                    <img id="rain-image" class="weather-icons">
+                    <img id="rain-image" class="weather-icons" />
                     <p id="rain-text" class="units-info"></p>
                     <p id="rain-info" class="units-name"></p>
                 </div>
                 <div class="weather-detailed-info-box">
-                    <img class="weather-icons" id="wind-direction-image">
+                    <img class="weather-icons" id="wind-direction-image" />
                     <p id="wind-direction" class="units-info"></p>
                     <p id="wind-direction-info" class="units-name"></p>
                 </div>
@@ -70,60 +74,26 @@
         </div>
 
         <div class="weekly-forecast-box">
-            <p class="weekly-forecast-text" id="weekly-forecast-text"></p>
+            <p class="weekly-forecast-text" id="weekly-forecast-text">
+            </p>
+
             <div class="week-days-forecast">
-                <div class="week-days-forecast-box">
-                    <p class="day-of-the-week" id="first-day"></p>
-                    <img class="day-of-the-week-weather-image" id="first-day-image">
-                    <div class="max-min-temperature">
-                        <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
-                    <p class="minimum-temperature" id="first-day-minimum-temperature"></p>
-                    </div>
-                </div>
-                <div class="week-days-forecast-box">
-                    <p class="day-of-the-week" id="second-day"></p>
-                    <img class="day-of-the-week-weather-image" id="second-day-image">
-                    <div class="max-min-temperature">
-                        <p class="maximum-temperature" id="second-day-maximum-temperature"></p>
-                    <p class="minimum-temperature" id="second-day-minimum-temperature"></p>
-                    </div>
-                </div>
-                <div class="week-days-forecast-box">
-                    <p class="day-of-the-week" id="third-day"></p>
-                    <img class="day-of-the-week-weather-image" id="third-day-image">
-                    <div class="max-min-temperature">
-                        <p class="maximum-temperature" id="third-day-maximum-temperature"></p>
-                    <p class="minimum-temperature" id="third-day-minimum-temperature"></p>
-                    </div>
-                </div>
-                <div class="week-days-forecast-box">
-                    <p class="day-of-the-week" id="fourth-day"></p>
-                    <img class="day-of-the-week-weather-image" id="fourth-day-image">
-                    <div class="max-min-temperature">
-                        <p class="maximum-temperature" id="fourth-day-maximum-temperature"></p>
-                    <p class="minimum-temperature" id="fourth-day-minimum-temperature"></p>
-                    </div>
-                </div>
-                <div class="week-days-forecast-box">
-                    <p class="day-of-the-week" id="fifth-day"></p>
-                    <img class="day-of-the-week-weather-image" id="fifth-day-image">
-                    <div class="max-min-temperature">
-                        <p class="maximum-temperature" id="fifth-day-maximum-temperature"></p>
-                    <p class="minimum-temperature" id="fifth-day-minimum-temperature"></p>
-                    </div>
-                </div>
-                <div class="week-days-forecast-box">
-                    <p class="day-of-the-week" id="sixth-day"></p>
-                    <img class="day-of-the-week-weather-image" id="sixth-day-image">
-                    <div class="max-min-temperature">
-                        <p class="maximum-temperature" id="sixth-day-maximum-temperature"></p>
-                    <p class="minimum-temperature" id="sixth-day-minimum-temperature"></p>
-                    </div>
-                </div>
+                <div id="first-day-box" class="week-days-forecast-box"></div>
+
+                <div id="second-day-box" class="week-days-forecast-box"></div>
+
+                <div id="third-day-box" class="week-days-forecast-box"></div>
+
+                <div id="fourth-day-box" class="week-days-forecast-box"></div>
+
+                <div id="fifth-day-box" class="week-days-forecast-box"></div>
+
+                <div id="sixth-day-box" class="week-days-forecast-box"></div>
             </div>
         </div>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>

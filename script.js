@@ -551,62 +551,6 @@ const weatherDetailsInfo = document.getElementById("weather-detailed-info");
 const temperatureMoreInfo = document.getElementById("temperature-more-info");
 const weeklyForecastText = document.getElementById("weekly-forecast-text");
 
-const firstDay = document.getElementById("first-day");
-const secondDay = document.getElementById("second-day");
-const thirdDay = document.getElementById("third-day");
-const fourthDay = document.getElementById("fourth-day");
-const fifthDay = document.getElementById("fifth-day");
-const sixthDay = document.getElementById("sixth-day");
-
-const firstDayImage = document.getElementById("first-day-image");
-const secondDayImage = document.getElementById("second-day-image");
-const thirdDayImage = document.getElementById("third-day-image");
-const fourthDayImage = document.getElementById("fourth-day-image");
-const fifthDayImage = document.getElementById("fifth-day-image");
-const sixthDayImage = document.getElementById("sixth-day-image");
-
-const firstDayMaximumTemperature = document.getElementById(
-  "first-day-maximum-temperature"
-);
-const firstDayMinimumTemperature = document.getElementById(
-  "first-day-minimum-temperature"
-);
-
-const secondDayMaximumTemperature = document.getElementById(
-  "second-day-maximum-temperature"
-);
-const secondDayMinimumTemperature = document.getElementById(
-  "second-day-minimum-temperature"
-);
-
-const thirdDayMaximumTemperature = document.getElementById(
-  "third-day-maximum-temperature"
-);
-const thirdDayMinimumTemperature = document.getElementById(
-  "third-day-minimum-temperature"
-);
-
-const fourthDayMaximumTemperature = document.getElementById(
-  "fourth-day-maximum-temperature"
-);
-const fourthDayMinimumTemperature = document.getElementById(
-  "fourth-day-minimum-temperature"
-);
-
-const fifthDayMaximumTemperature = document.getElementById(
-  "fifth-day-maximum-temperature"
-);
-const fifthDayMinimumTemperature = document.getElementById(
-  "fifth-day-minimum-temperature"
-);
-
-const sixthDayMaximumTemperature = document.getElementById(
-  "sixth-day-maximum-temperature"
-);
-const sixthDayMinimumTemperature = document.getElementById(
-  "sixth-day-minimum-temperature"
-);
-
 function styleHomePage() {
   tempImage.style.width = "150px";
   tempImage.style.height = "150px";
@@ -623,6 +567,13 @@ function getDayOfTheWeek(data) {
   const hours = d.getHours();
   const minutes = d.getMinutes();
 
+  const firstDayBox = document.getElementById("first-day-box");
+  const secondDayBox = document.getElementById("second-day-box");
+  const thirdDayBox = document.getElementById("third-day-box");
+  const fourthDayBox = document.getElementById("fourth-day-box");
+  const fifthDayBox = document.getElementById("fifth-day-box");
+  const sixthDayBox = document.getElementById("sixth-day-box");
+
   if (minutes < 10) {
     whatDay.innerHTML =
       `${dayCodes[dayNumber]}, ` + `${hours}:` + `0${minutes}` + ` PM`;
@@ -632,153 +583,320 @@ function getDayOfTheWeek(data) {
   }
 
   if (dayCodes[dayNumber] === "Sunday") {
-    //First Day
+
+    /*----------First Day----------*/
+    firstDayBox.innerHTML = `<p class="day-of-the-week" id="first-day"></p>
+                    <img class="day-of-the-week-weather-image" id="first-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="first-day-minimum-temperature"></p>
+                    </div>`;
+
+    const firstDay = document.getElementById("first-day");
     firstDay.innerHTML = "Mon";
 
     //Icon
+    const firstDayImage = document.getElementById("first-day-image");
     firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const firstDayMaximumTemperature = document.getElementById(
+      "first-day-maximum-temperature"
+    );
     firstDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[1])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const firstDayMinimumTemperature = document.getElementById(
+      "first-day-minimum-temperature"
+    );
     firstDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[1])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Second Day
+    /*----------Second Day----------*/
+    secondDayBox.innerHTML = `<p class="day-of-the-week" id="second-day"></p>
+                    <img class="day-of-the-week-weather-image" id="second-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="second-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="second-day-minimum-temperature"></p>
+                    </div>`;
+
+    const secondDay = document.getElementById("second-day");
     secondDay.innerHTML = "Tue";
+
     //Icon
+    const secondDayImage = document.getElementById("second-day-image");
     secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const secondDayMaximumTemperature = document.getElementById(
+      "second-day-maximum-temperature"
+    );
     secondDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[2])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const secondDayMinimumTemperature = document.getElementById(
+      "second-day-minimum-temperature"
+    );
     secondDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[2])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Third Day
+    /*----------Third Day----------*/
+
+    thirdDayBox.innerHTML = `<p class="day-of-the-week" id="third-day"></p>
+                    <img class="day-of-the-week-weather-image" id="third-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="third-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="third-day-minimum-temperature"></p>
+                    </div>`;
+
+    const thirdDay = document.getElementById("third-day");
     thirdDay.innerHTML = "Wed";
+
     //Icon
+    const thirdDayImage = document.getElementById("third-day-image");
     thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const thirdDayMaximumTemperature = document.getElementById(
+      "third-day-maximum-temperature"
+    );
     thirdDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[3])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const thirdDayMinimumTemperature = document.getElementById(
+      "third-day-minimum-temperature"
+    );
     thirdDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[3])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fourth Day
+    /*----------Fourth Day----------*/
+
+    fourthDayBox.innerHTML = `<p class="day-of-the-week" id="fourth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fourth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fourth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fourth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fourthDay = document.getElementById("fourth-day");
     fourthDay.innerHTML = "Thu";
+
     //Icon
+    const fourthDayImage = document.getElementById("fourth-day-image");
     fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const fourthDayMaximumTemperature = document.getElementById(
+      "fourth-day-maximum-temperature"
+    );
     fourthDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[4])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const fourthDayMinimumTemperature = document.getElementById(
+      "fourth-day-minimum-temperature"
+    );
     fourthDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[4])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fifth Day
+    /*----------Fifth Day----------*/
+
+    fifthDayBox.innerHTML = `<p class="day-of-the-week" id="fifth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fifth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fifth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fifth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fifthDay = document.getElementById("fifth-day");
     fifthDay.innerHTML = "Fri";
+
     //Icon
+    const fifthDayImage = document.getElementById("fifth-day-image");
     fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const fifthDayMaximumTemperature = document.getElementById(
+      "fifth-day-maximum-temperature"
+    );
     fifthDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[5])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const fifthDayMinimumTemperature = document.getElementById(
+      "fifth-day-minimum-temperature"
+    );
     fifthDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[5])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Sixth Day
+    /*----------Sixth Day----------*/
+
+    sixthDayBox.innerHTML = `<p class="day-of-the-week" id="sixth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="sixth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="sixth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="sixth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const sixthDay = document.getElementById("sixth-day");
     sixthDay.innerHTML = "Sat";
+
     //Icon
+    const sixthDayImage = document.getElementById("sixth-day-image");
     sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const sixthDayMaximumTemperature = document.getElementById(
+      "sixth-day-maximum-temperature"
+    );
     sixthDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[6])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const sixthDayMinimumTemperature = document.getElementById(
+      "sixth-day-minimum-temperature"
+    );
     sixthDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[6])}` +
       `${data.current_units.temperature_2m}`;
+
   } else if (dayCodes[dayNumber] === "Monday") {
-    //First Day
+
+    /*----------First Day----------*/
+    firstDayBox.innerHTML = `<p class="day-of-the-week" id="first-day"></p>
+                    <img class="day-of-the-week-weather-image" id="first-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="first-day-minimum-temperature"></p>
+                    </div>`;
+
+    const firstDay = document.getElementById("first-day");
     firstDay.innerHTML = "Tue";
 
     //Icon
+    const firstDayImage = document.getElementById("first-day-image");
     firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const firstDayMaximumTemperature = document.getElementById(
+      "first-day-maximum-temperature"
+    );
     firstDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[1])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const firstDayMinimumTemperature = document.getElementById(
+      "first-day-minimum-temperature"
+    );
     firstDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[1])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Second Day
+    /*----------Second Day----------*/
+    secondDayBox.innerHTML = `<p class="day-of-the-week" id="second-day"></p>
+                    <img class="day-of-the-week-weather-image" id="second-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="second-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="second-day-minimum-temperature"></p>
+                    </div>`;
+
+    const secondDay = document.getElementById("second-day");
     secondDay.innerHTML = "Wed";
+
     //Icon
+    const secondDayImage = document.getElementById("second-day-image");
     secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const secondDayMaximumTemperature = document.getElementById(
+      "second-day-maximum-temperature"
+    );
     secondDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[2])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const secondDayMinimumTemperature = document.getElementById(
+      "second-day-minimum-temperature"
+    );
     secondDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[2])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Third Day
+    /*----------Third Day----------*/
+
+    thirdDayBox.innerHTML = `<p class="day-of-the-week" id="third-day"></p>
+                    <img class="day-of-the-week-weather-image" id="third-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="third-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="third-day-minimum-temperature"></p>
+                    </div>`;
+
+    const thirdDay = document.getElementById("third-day");
     thirdDay.innerHTML = "Thu";
+
     //Icon
+    const thirdDayImage = document.getElementById("third-day-image");
     thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const thirdDayMaximumTemperature = document.getElementById(
+      "third-day-maximum-temperature"
+    );
     thirdDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[3])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const thirdDayMinimumTemperature = document.getElementById(
+      "third-day-minimum-temperature"
+    );
     thirdDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[3])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fourth Day
+    /*----------Fourth Day----------*/
+
+    fourthDayBox.innerHTML = `<p class="day-of-the-week" id="fourth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fourth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fourth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fourth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fourthDay = document.getElementById("fourth-day");
+    const fourthDayImage = document.getElementById("fourth-day-image");
+    const fourthDayMaximumTemperature = document.getElementById(
+      "fourth-day-maximum-temperature"
+    );
+    const fourthDayMinimumTemperature = document.getElementById(
+      "fourth-day-minimum-temperature"
+    );
+
     fourthDay.innerHTML = "Fri";
     //Icon
     fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
@@ -794,7 +912,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[4])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fifth Day
+    /*----------Fifth Day----------*/
+
+    fifthDayBox.innerHTML = `<p class="day-of-the-week" id="fifth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fifth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fifth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fifth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fifthDay = document.getElementById("fifth-day");
+    const fifthDayImage = document.getElementById("fifth-day-image");
+    const fifthDayMaximumTemperature = document.getElementById(
+      "fifth-day-maximum-temperature"
+    );
+    const fifthDayMinimumTemperature = document.getElementById(
+      "fifth-day-minimum-temperature"
+    );
+
     fifthDay.innerHTML = "Sat";
     //Icon
     fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
@@ -810,7 +945,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[5])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Sixth Day
+    /*----------Sixth Day----------*/
+
+    sixthDayBox.innerHTML = `<p class="day-of-the-week" id="sixth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="sixth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="sixth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="sixth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const sixthDay = document.getElementById("sixth-day");
+    const sixthDayImage = document.getElementById("sixth-day-image");
+    const sixthDayMaximumTemperature = document.getElementById(
+      "sixth-day-maximum-temperature"
+    );
+    const sixthDayMinimumTemperature = document.getElementById(
+      "sixth-day-minimum-temperature"
+    );
+
     sixthDay.innerHTML = "Sun";
     //Icon
     sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
@@ -826,7 +978,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[6])}` +
       `${data.current_units.temperature_2m}`;
   } else if (dayCodes[dayNumber] === "Tuesday") {
-    //First Day
+
+    /*----------First Day----------*/
+    firstDayBox.innerHTML = `<p class="day-of-the-week" id="first-day"></p>
+                    <img class="day-of-the-week-weather-image" id="first-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="first-day-minimum-temperature"></p>
+                    </div>`;
+
+    const firstDay = document.getElementById("first-day");
+    const firstDayImage = document.getElementById("first-day-image");
+    const firstDayMaximumTemperature = document.getElementById(
+      "first-day-maximum-temperature"
+    );
+    const firstDayMinimumTemperature = document.getElementById(
+      "first-day-minimum-temperature"
+    );
+
     firstDay.innerHTML = "Wed";
 
     //Icon
@@ -843,7 +1012,23 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[1])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Second Day
+    /*----------Second Day----------*/
+    secondDayBox.innerHTML = `<p class="day-of-the-week" id="second-day"></p>
+                    <img class="day-of-the-week-weather-image" id="second-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="second-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="second-day-minimum-temperature"></p>
+                    </div>`;
+
+    const secondDay = document.getElementById("second-day");
+    const secondDayImage = document.getElementById("second-day-image");
+    const secondDayMaximumTemperature = document.getElementById(
+      "second-day-maximum-temperature"
+    );
+    const secondDayMinimumTemperature = document.getElementById(
+      "second-day-minimum-temperature"
+    );
+
     secondDay.innerHTML = "Thu";
     //Icon
     secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
@@ -859,7 +1044,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[2])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Third Day
+    /*----------Third Day----------*/
+
+    thirdDayBox.innerHTML = `<p class="day-of-the-week" id="third-day"></p>
+                    <img class="day-of-the-week-weather-image" id="third-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="third-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="third-day-minimum-temperature"></p>
+                    </div>`;
+
+    const thirdDay = document.getElementById("third-day");
+    const thirdDayImage = document.getElementById("third-day-image");
+    const thirdDayMaximumTemperature = document.getElementById(
+      "third-day-maximum-temperature"
+    );
+    const thirdDayMinimumTemperature = document.getElementById(
+      "third-day-minimum-temperature"
+    );
+
     thirdDay.innerHTML = "Fri";
     //Icon
     thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
@@ -875,7 +1077,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[3])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fourth Day
+    /*----------Fourth Day----------*/
+
+    fourthDayBox.innerHTML = `<p class="day-of-the-week" id="fourth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fourth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fourth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fourth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fourthDay = document.getElementById("fourth-day");
+    const fourthDayImage = document.getElementById("fourth-day-image");
+    const fourthDayMaximumTemperature = document.getElementById(
+      "fourth-day-maximum-temperature"
+    );
+    const fourthDayMinimumTemperature = document.getElementById(
+      "fourth-day-minimum-temperature"
+    );
+
     fourthDay.innerHTML = "Sat";
     //Icon
     fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
@@ -891,7 +1110,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[4])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fifth Day
+    /*----------Fifth Day----------*/
+
+    fifthDayBox.innerHTML = `<p class="day-of-the-week" id="fifth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fifth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fifth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fifth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fifthDay = document.getElementById("fifth-day");
+    const fifthDayImage = document.getElementById("fifth-day-image");
+    const fifthDayMaximumTemperature = document.getElementById(
+      "fifth-day-maximum-temperature"
+    );
+    const fifthDayMinimumTemperature = document.getElementById(
+      "fifth-day-minimum-temperature"
+    );
+
     fifthDay.innerHTML = "Sun";
     //Icon
     fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
@@ -907,7 +1143,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[5])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Sixth Day
+    /*----------Sixth Day----------*/
+
+    sixthDayBox.innerHTML = `<p class="day-of-the-week" id="sixth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="sixth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="sixth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="sixth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const sixthDay = document.getElementById("sixth-day");
+    const sixthDayImage = document.getElementById("sixth-day-image");
+    const sixthDayMaximumTemperature = document.getElementById(
+      "sixth-day-maximum-temperature"
+    );
+    const sixthDayMinimumTemperature = document.getElementById(
+      "sixth-day-minimum-temperature"
+    );
+
     sixthDay.innerHTML = "Mon";
     //Icon
     sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
@@ -923,7 +1176,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[6])}` +
       `${data.current_units.temperature_2m}`;
   } else if (dayCodes[dayNumber] === "Wednesday") {
-    //First Day
+
+    /*----------First Day----------*/
+    firstDayBox.innerHTML = `<p class="day-of-the-week" id="first-day"></p>
+                    <img class="day-of-the-week-weather-image" id="first-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="first-day-minimum-temperature"></p>
+                    </div>`;
+
+    const firstDay = document.getElementById("first-day");
+    const firstDayImage = document.getElementById("first-day-image");
+    const firstDayMaximumTemperature = document.getElementById(
+      "first-day-maximum-temperature"
+    );
+    const firstDayMinimumTemperature = document.getElementById(
+      "first-day-minimum-temperature"
+    );
+
     firstDay.innerHTML = "Thu";
 
     //Icon
@@ -940,7 +1210,23 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[1])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Second Day
+    /*----------Second Day----------*/
+    secondDayBox.innerHTML = `<p class="day-of-the-week" id="second-day"></p>
+                    <img class="day-of-the-week-weather-image" id="second-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="second-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="second-day-minimum-temperature"></p>
+                    </div>`;
+
+    const secondDay = document.getElementById("second-day");
+    const secondDayImage = document.getElementById("second-day-image");
+    const secondDayMaximumTemperature = document.getElementById(
+      "second-day-maximum-temperature"
+    );
+    const secondDayMinimumTemperature = document.getElementById(
+      "second-day-minimum-temperature"
+    );
+
     secondDay.innerHTML = "Fri";
     //Icon
     secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
@@ -956,7 +1242,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[2])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Third Day
+    /*----------Third Day----------*/
+
+    thirdDayBox.innerHTML = `<p class="day-of-the-week" id="third-day"></p>
+                    <img class="day-of-the-week-weather-image" id="third-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="third-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="third-day-minimum-temperature"></p>
+                    </div>`;
+
+    const thirdDay = document.getElementById("third-day");
+    const thirdDayImage = document.getElementById("third-day-image");
+    const thirdDayMaximumTemperature = document.getElementById(
+      "third-day-maximum-temperature"
+    );
+    const thirdDayMinimumTemperature = document.getElementById(
+      "third-day-minimum-temperature"
+    );
+
     thirdDay.innerHTML = "Sat";
     //Icon
     thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
@@ -972,7 +1275,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[3])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fourth Day
+    /*----------Fourth Day----------*/
+
+    fourthDayBox.innerHTML = `<p class="day-of-the-week" id="fourth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fourth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fourth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fourth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fourthDay = document.getElementById("fourth-day");
+    const fourthDayImage = document.getElementById("fourth-day-image");
+    const fourthDayMaximumTemperature = document.getElementById(
+      "fourth-day-maximum-temperature"
+    );
+    const fourthDayMinimumTemperature = document.getElementById(
+      "fourth-day-minimum-temperature"
+    );
+
     fourthDay.innerHTML = "Sun";
     //Icon
     fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
@@ -988,7 +1308,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[4])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fifth Day
+    /*----------Fifth Day----------*/
+
+    fifthDayBox.innerHTML = `<p class="day-of-the-week" id="fifth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fifth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fifth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fifth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fifthDay = document.getElementById("fifth-day");
+    const fifthDayImage = document.getElementById("fifth-day-image");
+    const fifthDayMaximumTemperature = document.getElementById(
+      "fifth-day-maximum-temperature"
+    );
+    const fifthDayMinimumTemperature = document.getElementById(
+      "fifth-day-minimum-temperature"
+    );
+
     fifthDay.innerHTML = "Mon";
     //Icon
     fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
@@ -1004,7 +1341,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[5])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Sixth Day
+    /*----------Sixth Day----------*/
+
+    sixthDayBox.innerHTML = `<p class="day-of-the-week" id="sixth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="sixth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="sixth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="sixth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const sixthDay = document.getElementById("sixth-day");
+    const sixthDayImage = document.getElementById("sixth-day-image");
+    const sixthDayMaximumTemperature = document.getElementById(
+      "sixth-day-maximum-temperature"
+    );
+    const sixthDayMinimumTemperature = document.getElementById(
+      "sixth-day-minimum-temperature"
+    );
+
     sixthDay.innerHTML = "Tue";
     //Icon
     sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
@@ -1020,7 +1374,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[6])}` +
       `${data.current_units.temperature_2m}`;
   } else if (dayCodes[dayNumber] === "Thursday") {
-    //First Day
+
+    /*----------First Day----------*/
+    firstDayBox.innerHTML = `<p class="day-of-the-week" id="first-day"></p>
+                    <img class="day-of-the-week-weather-image" id="first-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="first-day-minimum-temperature"></p>
+                    </div>`;
+
+    const firstDay = document.getElementById("first-day");
+    const firstDayImage = document.getElementById("first-day-image");
+    const firstDayMaximumTemperature = document.getElementById(
+      "first-day-maximum-temperature"
+    );
+    const firstDayMinimumTemperature = document.getElementById(
+      "first-day-minimum-temperature"
+    );
+
     firstDay.innerHTML = "Fri";
 
     //Icon
@@ -1037,7 +1408,23 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[1])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Second Day
+    /*----------Second Day----------*/
+    secondDayBox.innerHTML = `<p class="day-of-the-week" id="second-day"></p>
+                    <img class="day-of-the-week-weather-image" id="second-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="second-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="second-day-minimum-temperature"></p>
+                    </div>`;
+
+    const secondDay = document.getElementById("second-day");
+    const secondDayImage = document.getElementById("second-day-image");
+    const secondDayMaximumTemperature = document.getElementById(
+      "second-day-maximum-temperature"
+    );
+    const secondDayMinimumTemperature = document.getElementById(
+      "second-day-minimum-temperature"
+    );
+
     secondDay.innerHTML = "Sat";
     //Icon
     secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
@@ -1053,7 +1440,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[2])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Third Day
+    /*----------Third Day----------*/
+
+    thirdDayBox.innerHTML = `<p class="day-of-the-week" id="third-day"></p>
+                    <img class="day-of-the-week-weather-image" id="third-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="third-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="third-day-minimum-temperature"></p>
+                    </div>`;
+
+    const thirdDay = document.getElementById("third-day");
+    const thirdDayImage = document.getElementById("third-day-image");
+    const thirdDayMaximumTemperature = document.getElementById(
+      "third-day-maximum-temperature"
+    );
+    const thirdDayMinimumTemperature = document.getElementById(
+      "third-day-minimum-temperature"
+    );
+
     thirdDay.innerHTML = "Sun";
     //Icon
     thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
@@ -1069,7 +1473,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[3])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fourth Day
+    /*----------Fourth Day----------*/
+
+    fourthDayBox.innerHTML = `<p class="day-of-the-week" id="fourth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fourth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fourth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fourth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fourthDay = document.getElementById("fourth-day");
+    const fourthDayImage = document.getElementById("fourth-day-image");
+    const fourthDayMaximumTemperature = document.getElementById(
+      "fourth-day-maximum-temperature"
+    );
+    const fourthDayMinimumTemperature = document.getElementById(
+      "fourth-day-minimum-temperature"
+    );
+
     fourthDay.innerHTML = "Mon";
     //Icon
     fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
@@ -1085,7 +1506,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[4])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fifth Day
+    /*----------Fifth Day----------*/
+
+    fifthDayBox.innerHTML = `<p class="day-of-the-week" id="fifth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fifth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fifth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fifth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fifthDay = document.getElementById("fifth-day");
+    const fifthDayImage = document.getElementById("fifth-day-image");
+    const fifthDayMaximumTemperature = document.getElementById(
+      "fifth-day-maximum-temperature"
+    );
+    const fifthDayMinimumTemperature = document.getElementById(
+      "fifth-day-minimum-temperature"
+    );
+
     fifthDay.innerHTML = "Tue";
     //Icon
     fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
@@ -1101,7 +1539,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[5])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Sixth Day
+    /*----------Sixth Day----------*/
+
+    sixthDayBox.innerHTML = `<p class="day-of-the-week" id="sixth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="sixth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="sixth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="sixth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const sixthDay = document.getElementById("sixth-day");
+    const sixthDayImage = document.getElementById("sixth-day-image");
+    const sixthDayMaximumTemperature = document.getElementById(
+      "sixth-day-maximum-temperature"
+    );
+    const sixthDayMinimumTemperature = document.getElementById(
+      "sixth-day-minimum-temperature"
+    );
+
     sixthDay.innerHTML = "Wed";
     //Icon
     sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
@@ -1116,25 +1571,58 @@ function getDayOfTheWeek(data) {
     sixthDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[6])}` +
       `${data.current_units.temperature_2m}`;
+
   } else if (dayCodes[dayNumber] === "Friday") {
-    //First Day
+
+    /*----------First Day----------*/
+    firstDayBox.innerHTML = `<p class="day-of-the-week" id="first-day"></p>
+                    <img class="day-of-the-week-weather-image" id="first-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="first-day-minimum-temperature"></p>
+                    </div>`;
+
+    const firstDay = document.getElementById("first-day");
     firstDay.innerHTML = "Sat";
 
     //Icon
+    const firstDayImage = document.getElementById("first-day-image");
     firstDayImage.src = `assets/${weather_codes[data.daily.weather_code[1]].icons.day
       }`;
 
     //Maximum Temp For Day One
+    const firstDayMaximumTemperature = document.getElementById(
+      "first-day-maximum-temperature"
+    );
     firstDayMaximumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_max[1])}` +
       `${data.current_units.temperature_2m}`;
 
     //Minimum Temp For Day One
+    const firstDayMinimumTemperature = document.getElementById(
+      "first-day-minimum-temperature"
+    );
     firstDayMinimumTemperature.innerHTML =
       `${Math.ceil(data.daily.temperature_2m_min[1])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Second Day
+    /*----------Second Day----------*/
+    secondDayBox.innerHTML = `<p class="day-of-the-week" id="second-day"></p>
+                    <img class="day-of-the-week-weather-image" id="second-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="second-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="second-day-minimum-temperature"></p>
+                    </div>`;
+
+    const secondDay = document.getElementById("second-day");
+    const secondDayImage = document.getElementById("second-day-image");
+    const secondDayMaximumTemperature = document.getElementById(
+      "second-day-maximum-temperature"
+    );
+    const secondDayMinimumTemperature = document.getElementById(
+      "second-day-minimum-temperature"
+    );
+
     secondDay.innerHTML = "Sun";
     //Icon
     secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
@@ -1150,7 +1638,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[2])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Third Day
+    /*----------Third Day----------*/
+
+    thirdDayBox.innerHTML = `<p class="day-of-the-week" id="third-day"></p>
+                    <img class="day-of-the-week-weather-image" id="third-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="third-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="third-day-minimum-temperature"></p>
+                    </div>`;
+
+    const thirdDay = document.getElementById("third-day");
+    const thirdDayImage = document.getElementById("third-day-image");
+    const thirdDayMaximumTemperature = document.getElementById(
+      "third-day-maximum-temperature"
+    );
+    const thirdDayMinimumTemperature = document.getElementById(
+      "third-day-minimum-temperature"
+    );
+
     thirdDay.innerHTML = "Mon";
     //Icon
     thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
@@ -1166,7 +1671,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[3])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fourth Day
+    /*----------Fourth Day----------*/
+
+    fourthDayBox.innerHTML = `<p class="day-of-the-week" id="fourth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fourth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fourth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fourth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fourthDay = document.getElementById("fourth-day");
+    const fourthDayImage = document.getElementById("fourth-day-image");
+    const fourthDayMaximumTemperature = document.getElementById(
+      "fourth-day-maximum-temperature"
+    );
+    const fourthDayMinimumTemperature = document.getElementById(
+      "fourth-day-minimum-temperature"
+    );
+
     fourthDay.innerHTML = "Tue";
     //Icon
     fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
@@ -1182,7 +1704,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[4])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fifth Day
+    /*----------Fifth Day----------*/
+
+    fifthDayBox.innerHTML = `<p class="day-of-the-week" id="fifth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fifth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fifth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fifth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fifthDay = document.getElementById("fifth-day");
+    const fifthDayImage = document.getElementById("fifth-day-image");
+    const fifthDayMaximumTemperature = document.getElementById(
+      "fifth-day-maximum-temperature"
+    );
+    const fifthDayMinimumTemperature = document.getElementById(
+      "fifth-day-minimum-temperature"
+    );
+
     fifthDay.innerHTML = "Wed";
     //Icon
     fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
@@ -1198,7 +1737,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[5])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Sixth Day
+    /*----------Sixth Day----------*/
+
+    sixthDayBox.innerHTML = `<p class="day-of-the-week" id="sixth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="sixth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="sixth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="sixth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const sixthDay = document.getElementById("sixth-day");
+    const sixthDayImage = document.getElementById("sixth-day-image");
+    const sixthDayMaximumTemperature = document.getElementById(
+      "sixth-day-maximum-temperature"
+    );
+    const sixthDayMinimumTemperature = document.getElementById(
+      "sixth-day-minimum-temperature"
+    );
+
     sixthDay.innerHTML = "Thu";
     //Icon
     sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
@@ -1214,7 +1770,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[6])}` +
       `${data.current_units.temperature_2m}`;
   } else if (dayCodes[dayNumber] === "Saturday") {
-    //First Day
+
+    /*----------First Day----------*/
+    firstDayBox.innerHTML = `<p class="day-of-the-week" id="first-day"></p>
+                    <img class="day-of-the-week-weather-image" id="first-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="first-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="first-day-minimum-temperature"></p>
+                    </div>`;
+
+    const firstDay = document.getElementById("first-day");
+    const firstDayImage = document.getElementById("first-day-image");
+    const firstDayMaximumTemperature = document.getElementById(
+      "first-day-maximum-temperature"
+    );
+    const firstDayMinimumTemperature = document.getElementById(
+      "first-day-minimum-temperature"
+    );
+
     firstDay.innerHTML = "Sun";
 
     //Icon
@@ -1231,7 +1804,23 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[1])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Second Day
+    /*----------Second Day----------*/
+    secondDayBox.innerHTML = `<p class="day-of-the-week" id="second-day"></p>
+                    <img class="day-of-the-week-weather-image" id="second-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="second-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="second-day-minimum-temperature"></p>
+                    </div>`;
+
+    const secondDay = document.getElementById("second-day");
+    const secondDayImage = document.getElementById("second-day-image");
+    const secondDayMaximumTemperature = document.getElementById(
+      "second-day-maximum-temperature"
+    );
+    const secondDayMinimumTemperature = document.getElementById(
+      "second-day-minimum-temperature"
+    );
+
     secondDay.innerHTML = "Mon";
     //Icon
     secondDayImage.src = `assets/${weather_codes[data.daily.weather_code[2]].icons.day
@@ -1247,7 +1836,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[2])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Third Day
+    /*----------Third Day----------*/
+
+    thirdDayBox.innerHTML = `<p class="day-of-the-week" id="third-day"></p>
+                    <img class="day-of-the-week-weather-image" id="third-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="third-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="third-day-minimum-temperature"></p>
+                    </div>`;
+
+    const thirdDay = document.getElementById("third-day");
+    const thirdDayImage = document.getElementById("third-day-image");
+    const thirdDayMaximumTemperature = document.getElementById(
+      "third-day-maximum-temperature"
+    );
+    const thirdDayMinimumTemperature = document.getElementById(
+      "third-day-minimum-temperature"
+    );
+
     thirdDay.innerHTML = "Tue";
     //Icon
     thirdDayImage.src = `assets/${weather_codes[data.daily.weather_code[3]].icons.day
@@ -1263,7 +1869,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[3])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fourth Day
+    /*----------Fourth Day----------*/
+
+    fourthDayBox.innerHTML = `<p class="day-of-the-week" id="fourth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fourth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fourth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fourth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fourthDay = document.getElementById("fourth-day");
+    const fourthDayImage = document.getElementById("fourth-day-image");
+    const fourthDayMaximumTemperature = document.getElementById(
+      "fourth-day-maximum-temperature"
+    );
+    const fourthDayMinimumTemperature = document.getElementById(
+      "fourth-day-minimum-temperature"
+    );
+
     fourthDay.innerHTML = "Wed";
     //Icon
     fourthDayImage.src = `assets/${weather_codes[data.daily.weather_code[4]].icons.day
@@ -1279,7 +1902,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[4])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Fifth Day
+    /*----------Fifth Day----------*/
+
+    fifthDayBox.innerHTML = `<p class="day-of-the-week" id="fifth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="fifth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="fifth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="fifth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const fifthDay = document.getElementById("fifth-day");
+    const fifthDayImage = document.getElementById("fifth-day-image");
+    const fifthDayMaximumTemperature = document.getElementById(
+      "fifth-day-maximum-temperature"
+    );
+    const fifthDayMinimumTemperature = document.getElementById(
+      "fifth-day-minimum-temperature"
+    );
+
     fifthDay.innerHTML = "Thu";
     //Icon
     fifthDayImage.src = `assets/${weather_codes[data.daily.weather_code[5]].icons.day
@@ -1295,7 +1935,24 @@ function getDayOfTheWeek(data) {
       `${Math.ceil(data.daily.temperature_2m_min[5])}` +
       `${data.current_units.temperature_2m}`;
 
-    //Sixth Day
+    /*----------Sixth Day----------*/
+
+    sixthDayBox.innerHTML = `<p class="day-of-the-week" id="sixth-day"></p>
+                    <img class="day-of-the-week-weather-image" id="sixth-day-image">
+                    <div class="max-min-temperature">
+                        <p class="maximum-temperature" id="sixth-day-maximum-temperature"></p>
+                    <p class="minimum-temperature" id="sixth-day-minimum-temperature"></p>
+                    </div>`;
+
+    const sixthDay = document.getElementById("sixth-day");
+    const sixthDayImage = document.getElementById("sixth-day-image");
+    const sixthDayMaximumTemperature = document.getElementById(
+      "sixth-day-maximum-temperature"
+    );
+    const sixthDayMinimumTemperature = document.getElementById(
+      "sixth-day-minimum-temperature"
+    );
+
     sixthDay.innerHTML = "Fri";
     //Icon
     sixthDayImage.src = `assets/${weather_codes[data.daily.weather_code[6]].icons.day
@@ -1313,7 +1970,7 @@ function getDayOfTheWeek(data) {
   }
 }
 
-async function loadingAnimation(){
+async function loadingAnimation() {
   const mainContent = document.getElementById("main");
 
   mainContent.innerHTML = "";
@@ -1327,80 +1984,82 @@ async function loadingAnimation(){
   }, 0);
 
   clearInterval(loadTime);
-
 }
 
 function resultsClicked(index, data) {
+  fetch(
+    `https://api.open-meteo.com/v1/forecast?latitude=${data.results[index].latitude}&longitude=${data.results[index].longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,rain,precipitation,wind_direction_10m,is_day`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
 
-  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${data.results[index].latitude}&longitude=${data.results[index].longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,rain,precipitation,wind_direction_10m,is_day`).then((res) => res.json()).then((data) => {
-    console.log(data);
+      temperatureTxt.innerHTML =
+        `${Math.ceil(data.current.temperature_2m)}` +
+        `${data.current_units.temperature_2m}`;
+      temperatureInfo.innerHTML = `${weather_codes[data.current.weather_code].name
+        }`;
 
-    temperatureTxt.innerHTML =
-      `${Math.ceil(data.current.temperature_2m)}` +
-      `${data.current_units.temperature_2m}`;
-    temperatureInfo.innerHTML = `${weather_codes[data.current.weather_code].name
-      }`;
+      data.current.is_day === 1
+        ? (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day
+          }`)
+        : (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night
+          }`);
 
-    data.current.is_day === 1
-      ? (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day
-        }`)
-      : (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night
-        }`);
+      //Styles
+      weatherDetailsInfo.style.background = "white";
+      tempImage.style.width = "150px";
+      tempImage.style.height = "150px";
+      tempImage.style.objectFit = "cover";
+      weatherDetailsInfoBox.style.display = "flex";
+      weatherDetailsInfoBox.style.flexDirection = "column";
+      weatherDetailsInfoBox.style.backgroundColor = "#ffffff";
+      weatherDetailsInfoBox.style.justifyContent = "center";
+      weatherDetailsInfoBox.style.alignItems = "flex-start";
+      weatherDetailsInfoBox.style.padding = "15px 0 15px 10px";
+      temperatureMoreInfo.style.backgroundColor = "white";
 
-    //Styles
-    weatherDetailsInfo.style.background = "white";
-    tempImage.style.width = "150px";
-    tempImage.style.height = "150px";
-    tempImage.style.objectFit = "cover";
-    weatherDetailsInfoBox.style.display = "flex";
-    weatherDetailsInfoBox.style.flexDirection = "column";
-    weatherDetailsInfoBox.style.backgroundColor = "#ffffff";
-    weatherDetailsInfoBox.style.justifyContent = "center";
-    weatherDetailsInfoBox.style.alignItems = "flex-start";
-    weatherDetailsInfoBox.style.padding = "15px 0 15px 10px";
-    temperatureMoreInfo.style.backgroundColor = "white";
+      humidityText.innerHTML =
+        `${data.daily.precipitation_probability_max[0]}` +
+        `${data.daily_units.precipitation_probability_max}`;
 
-    humidityText.innerHTML =
-      `${data.daily.precipitation_probability_max[0]}` +
-      `${data.daily_units.precipitation_probability_max}`;
+      windSpeed.innerHTML = `${data.current.wind_speed_10m}km/h`;
 
-    windSpeed.innerHTML = `${data.current.wind_speed_10m}km/h`;
+      const degree = data.current.wind_direction_10m;
 
-    const degree = data.current.wind_direction_10m;
+      const directions = [
+        "North",
+        "North East",
+        "East",
+        "South East",
+        "South",
+        "South West",
+        "West",
+        "North West",
+      ];
+      const directionIndex = Math.round(degree / 45) % 8;
+      windDirection.innerHTML = `${directions[directionIndex]}`;
+      windDirectionImage.src = "images/icons8-weather-station-wind.gif";
+      windDirectionInfo.innerHTML = "Wind Direction";
 
-    const directions = [
-      "North",
-      "North East",
-      "East",
-      "South East",
-      "South",
-      "South West",
-      "West",
-      "North West",
-    ];
-    const directionIndex = Math.round(degree / 45) % 8;
-    windDirection.innerHTML = `${directions[directionIndex]}`;
-    windDirectionImage.src = "images/icons8-weather-station-wind.gif";
-    windDirectionInfo.innerHTML = "Wind Direction";
+      humidityInfo.innerHTML = "Precipitation";
+      humidityImage.src = "images/icons8-precipitation (1).gif";
 
-    humidityInfo.innerHTML = "Precipitation";
-    humidityImage.src = "images/icons8-precipitation (1).gif";
+      windSpeedInfo.innerHTML = "Wind Speed";
+      windImage.src = "images/icons8-windsock.gif";
 
-    windSpeedInfo.innerHTML = "Wind Speed";
-    windImage.src = "images/icons8-windsock.gif";
+      rainImage.src = "images/icons8-rain-gauge.gif";
+      rainText.innerHTML =
+        `${data.current.rain}` + `${data.current_units.rain}`;
+      rainInfo.innerHTML = "Rain";
 
-    rainImage.src = "images/icons8-rain-gauge.gif";
-    rainText.innerHTML =
-      `${data.current.rain}` + `${data.current_units.rain}`;
-    rainInfo.innerHTML = "Rain";
+      weeklyForecastText.innerHTML = "6 Day Forecast";
 
-    weeklyForecastText.innerHTML = "6 Day Forecast";
-
-    getDayOfTheWeek(data);
-  })
+      getDayOfTheWeek(data);
+    });
 
   displayLocation.innerHTML = `${data.results[index].name}, ${data.results[index].admin1}, ${data.results[index].country}`;
-};
+}
 
 //resultsClicked(1, data);
 
@@ -1491,21 +2150,27 @@ const clickedSubmit = submitButton.addEventListener(
 );
 */
 
-const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function searchLocation(event) {
+const searchLocationOnKeyUp = searchWeather.addEventListener(
+  "keyup",
+  function searchLocation(event) {
+    const value = searchWeather.value;
 
-  const value = searchWeather.value;
+    fetch(
+      `https://geocoding-api.open-meteo.com/v1/search?name=${value}&count=5&language=en&format=json`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        console.log(Object.keys(data.results).length);
+        //console.log(countryCodes[countryNameFromResults]);
 
-  fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${value}&count=5&language=en&format=json`).then((res) => res.json()).then((data) => {
-    console.log(data);
-    console.log(Object.keys(data.results).length);
-    //console.log(countryCodes[countryNameFromResults]);
+        if (value === "") {
+          resultsBox.innerHTM = "";
+        }
 
-    if (value === "") {
-      resultsBox.innerHTM = "";
-    }
-
-    if (Object.keys(data.results).length == 1) {
-      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+        if (Object.keys(data.results).length == 1) {
+          resultsBox.innerHTML = `<p>${Object.keys(data.results).length
+            } result for "${value}"</p>
       <div id="table-headers" class="results">
                 <p></p>
                 <p id="country-name">Country</p>
@@ -1515,25 +2180,26 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </div>
       
             <a id="result-1" class="results">
-                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]
+            }.svg" class="country-picture">
                 <p id="country-name">${data.results[0].country}</p>
                 <p id="city-name">${data.results[0].name}</</p>
                 <p id="admin1">${data.results[0].admin1 || ""}</</p>
                 <p id="admin2">${data.results[0].admin2 || ""}</p>
             </a>`;
 
-      const result1 = document.getElementById("result-1");
+          const result1 = document.getElementById("result-1");
 
-      result1.addEventListener("click", () => {
-        resultsClicked(0, data);
+          result1.addEventListener("click", () => {
+            resultsClicked(0, data);
 
-        resultsBox.innerHTML = "";
-      });
+            resultsBox.innerHTML = "";
+          });
+        }
 
-    }
-
-    if (Object.keys(data.results).length == 2) {
-      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+        if (Object.keys(data.results).length == 2) {
+          resultsBox.innerHTML = `<p>${Object.keys(data.results).length
+            } result for "${value}"</p>
       <div id="table-headers" class="results">
                 <p></p>
                 <p id="country-name">Country</p>
@@ -1543,7 +2209,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </div>
       
             <a id="result-1" class="results">
-                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]
+            }.svg" class="country-picture">
                 <p id="country-name">${data.results[0].country}</p>
                 <p id="city-name">${data.results[0].name}</p>
                 <p id="admin1">${data.results[0].admin1 || ""}</p>
@@ -1551,32 +2218,34 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-2" class="results">
-                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]
+            }.svg" class="country-picture">
                 <p id="country-name2">${data.results[1].country}</p>
                 <p id="city-name2">${data.results[1].name}</p>
                 <p id="admin1-2">${data.results[1].admin1 || ""}</p>
                 <p id="admin2-2">${data.results[1].admin2 || ""}</p>
             </a>`;
 
-      const result1 = document.getElementById("result-1");
+          const result1 = document.getElementById("result-1");
 
-      const result2 = document.getElementById("result-2");
+          const result2 = document.getElementById("result-2");
 
-      result1.addEventListener("click", () => {
-        resultsClicked(0, data);
+          result1.addEventListener("click", () => {
+            resultsClicked(0, data);
 
-        resultsBox.innerHTML = "";
-      });
+            resultsBox.innerHTML = "";
+          });
 
-      result2.addEventListener("click", () => {
-        resultsClicked(1, data);
+          result2.addEventListener("click", () => {
+            resultsClicked(1, data);
 
-        resultsBox.innerHTML = "";
-      });
-    }
+            resultsBox.innerHTML = "";
+          });
+        }
 
-    if (Object.keys(data.results).length == 3) {
-      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+        if (Object.keys(data.results).length == 3) {
+          resultsBox.innerHTML = `<p>${Object.keys(data.results).length
+            } result for "${value}"</p>
       <div id="table-headers" class="results">
                 <p></p>
                 <p id="country-name">Country</p>
@@ -1586,7 +2255,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </div>
       
             <a id="result-1" class="results">
-                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]
+            }.svg" class="country-picture">
                 <p id="country-name">${data.results[0].country}</p>
                 <p id="city-name">${data.results[0].name}</p>
                 <p id="admin1">${data.results[0].admin1 || ""}</p>
@@ -1594,7 +2264,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-2" class="results">
-                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]
+            }.svg" class="country-picture">
                 <p id="country-name2">${data.results[1].country}</p>
                 <p id="city-name2">${data.results[1].name}</p>
                 <p id="admin1-2">${data.results[1].admin1 || ""}</p>
@@ -1602,40 +2273,42 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-3" class="results">
-                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
+                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]
+            }.svg" class="country-picture">
                 <p id="country-name3">${data.results[2].country}</p>
                 <p id="city-name3">${data.results[2].name}</p>
                 <p id="admin1-3">${data.results[2].admin1 || ""}</p>
                 <p id="admin2-3">${data.results[2].admin2 || ""}</p>
             </a>`;
 
-      const result1 = document.getElementById("result-1");
+          const result1 = document.getElementById("result-1");
 
-      const result2 = document.getElementById("result-2");
+          const result2 = document.getElementById("result-2");
 
-      const result3 = document.getElementById("result-3");
+          const result3 = document.getElementById("result-3");
 
-      result1.addEventListener("click", () => {
-        resultsClicked(0, data);
+          result1.addEventListener("click", () => {
+            resultsClicked(0, data);
 
-        resultsBox.innerHTML = "";
-      });
+            resultsBox.innerHTML = "";
+          });
 
-      result2.addEventListener("click", () => {
-        resultsClicked(1, data);
+          result2.addEventListener("click", () => {
+            resultsClicked(1, data);
 
-        resultsBox.innerHTML = "";
-      });
+            resultsBox.innerHTML = "";
+          });
 
-      result3.addEventListener("click", () => {
-        resultsClicked(2, data);
+          result3.addEventListener("click", () => {
+            resultsClicked(2, data);
 
-        resultsBox.innerHTML = "";
-      });
-    }
+            resultsBox.innerHTML = "";
+          });
+        }
 
-    if (Object.keys(data.results).length == 4) {
-      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+        if (Object.keys(data.results).length == 4) {
+          resultsBox.innerHTML = `<p>${Object.keys(data.results).length
+            } result for "${value}"</p>
       <div id="table-headers" class="results">
                 <p></p>
                 <p id="country-name">Country</p>
@@ -1645,7 +2318,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </div>
       
             <a id="result-1" class="results">
-                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]
+            }.svg" class="country-picture">
                 <p id="country-name">${data.results[0].country}</p>
                 <p id="city-name">${data.results[0].name}</p>
                 <p id="admin1">${data.results[0].admin1}</p>
@@ -1653,7 +2327,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-2" class="results">
-                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]
+            }.svg" class="country-picture">
                 <p id="country-name2">${data.results[1].country}</p>
                 <p id="city-name2">${data.results[1].name}</p>
                 <p id="admin1-2">${data.results[1].admin1}</p>
@@ -1661,7 +2336,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-3" class="results">
-                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
+                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]
+            }.svg" class="country-picture">
                 <p id="country-name3">${data.results[2].country}</p>
                 <p id="city-name3">${data.results[2].name}</p>
                 <p id="admin1-3">${data.results[2].admin1}</p>
@@ -1669,48 +2345,50 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-4" class="results">
-                <img id="country-picture4" src="https://flagcdn.com/${countryCodes[data.results[3].country]}.svg" class="country-picture">
+                <img id="country-picture4" src="https://flagcdn.com/${countryCodes[data.results[3].country]
+            }.svg" class="country-picture">
                 <p id="country-name4">${data.results[3].country}</p>
                 <p id="city-name4">${data.results[3].name}</p>
                 <p id="admin1-4">${data.results[3].admin1}</p>
                 <p id="admin2-4">${data.results[3].admin2}</p>
             </a>`;
 
-      const result1 = document.getElementById("result-1");
+          const result1 = document.getElementById("result-1");
 
-      const result2 = document.getElementById("result-2");
+          const result2 = document.getElementById("result-2");
 
-      const result3 = document.getElementById("result-3");
+          const result3 = document.getElementById("result-3");
 
-      const result4 = document.getElementById("result-4");
+          const result4 = document.getElementById("result-4");
 
-      result1.addEventListener("click", () => {
-        resultsClicked(0, data);
+          result1.addEventListener("click", () => {
+            resultsClicked(0, data);
 
-        resultsBox.innerHTML = "";
-      });
+            resultsBox.innerHTML = "";
+          });
 
-      result2.addEventListener("click", () => {
-        resultsClicked(1, data);
+          result2.addEventListener("click", () => {
+            resultsClicked(1, data);
 
-        resultsBox.innerHTML = "";
-      });
+            resultsBox.innerHTML = "";
+          });
 
-      result3.addEventListener("click", () => {
-        resultsClicked(2, data);
+          result3.addEventListener("click", () => {
+            resultsClicked(2, data);
 
-        resultsBox.innerHTML = "";
-      });
+            resultsBox.innerHTML = "";
+          });
 
-      result4.addEventListener("click", () => {
-        resultsClicked(3, data);
+          result4.addEventListener("click", () => {
+            resultsClicked(3, data);
 
-        resultsBox.innerHTML = "";
-      });
-    }
+            resultsBox.innerHTML = "";
+          });
+        }
 
-    if (Object.keys(data.results).length == 5) {
-      resultsBox.innerHTML = `<p>${Object.keys(data.results).length} result for "${value}"</p>
+        if (Object.keys(data.results).length == 5) {
+          resultsBox.innerHTML = `<p>${Object.keys(data.results).length
+            } result for "${value}"</p>
       <div id="table-headers" class="results">
                 <p></p>
                 <p id="country-name">Country</p>
@@ -1720,7 +2398,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </div>
       
             <a id="result-1" class="results">
-                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]}.svg" class="country-picture">
+                <img id="country-picture" src="https://flagcdn.com/${countryCodes[data.results[0].country]
+            }.svg" class="country-picture">
                 <p id="country-name">${data.results[0].country}</p>
                 <p id="city-name">${data.results[0].name}</p>
                 <p id="admin1">${data.results[0].admin1}</p>
@@ -1728,7 +2407,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-2" class="results">
-                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]}.svg" class="country-picture">
+                <img id="country-picture2" src="https://flagcdn.com/${countryCodes[data.results[1].country]
+            }.svg" class="country-picture">
                 <p id="country-name2">${data.results[1].country}</p>
                 <p id="city-name2">${data.results[1].name}</p>
                 <p id="admin1-2">${data.results[1].admin1}</p>
@@ -1736,7 +2416,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-3" class="results">
-                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]}.svg" class="country-picture">
+                <img id="country-picture3" src="https://flagcdn.com/${countryCodes[data.results[2].country]
+            }.svg" class="country-picture">
                 <p id="country-name3">${data.results[2].country}</p>
                 <p id="city-name3">${data.results[2].name}</p>
                 <p id="admin1-3">${data.results[2].admin1}</p>
@@ -1744,7 +2425,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-4" class="results">
-                <img id="country-picture4" src="https://flagcdn.com/${countryCodes[data.results[3].country]}.svg" class="country-picture">
+                <img id="country-picture4" src="https://flagcdn.com/${countryCodes[data.results[3].country]
+            }.svg" class="country-picture">
                 <p id="country-name4">${data.results[3].country}</p>
                 <p id="city-name4">${data.results[3].name}</p>
                 <p id="admin1-4">${data.results[3].admin1}</p>
@@ -1752,62 +2434,63 @@ const searchLocationOnKeyUp = searchWeather.addEventListener("keyup", function s
             </a>
 
             <a id="result-5" class="results">
-                <img id="country-picture5" src="https://flagcdn.com/${countryCodes[data.results[4].country]}.svg" class="country-picture">
+                <img id="country-picture5" src="https://flagcdn.com/${countryCodes[data.results[4].country]
+            }.svg" class="country-picture">
                 <p id="country-name5">${data.results[3].country}</p>
                 <p id="city-name5">${data.results[4].name}</p>
                 <p id="admin1-5">${data.results[4].admin1}</p>
                 <p id="admin2-5">${data.results[4].admin2}</p>
             </a>`;
 
-      const result1 = document.getElementById("result-1");
+          const result1 = document.getElementById("result-1");
 
-      const result2 = document.getElementById("result-2");
+          const result2 = document.getElementById("result-2");
 
-      const result3 = document.getElementById("result-3");
+          const result3 = document.getElementById("result-3");
 
-      const result4 = document.getElementById("result-4");
+          const result4 = document.getElementById("result-4");
 
-      const result5 = document.getElementById("result-5");
+          const result5 = document.getElementById("result-5");
 
-      result1.addEventListener("click", () => {
-        resultsClicked(0, data);
+          result1.addEventListener("click", () => {
+            resultsClicked(0, data);
 
-        resultsBox.innerHTML = "";
+            resultsBox.innerHTML = "";
+          });
+
+          result2.addEventListener("click", () => {
+            resultsClicked(1, data);
+
+            resultsBox.innerHTML = "";
+          });
+
+          result3.addEventListener("click", () => {
+            resultsClicked(2, data);
+
+            resultsBox.innerHTML = "";
+          });
+
+          result4.addEventListener("click", () => {
+            resultsClicked(3, data);
+
+            resultsBox.innerHTML = "";
+          });
+
+          result5.addEventListener("click", () => {
+            resultsClicked(4, data);
+
+            resultsBox.innerHTML = "";
+          });
+        }
+
+        const tableHeaders = document
+          .querySelectorAll("#table-headers p")
+          .forEach((p) => {
+            p.style.fontWeight = "bold";
+          });
       });
-
-      result2.addEventListener("click", () => {
-        resultsClicked(1, data);
-
-        resultsBox.innerHTML = "";
-      });
-
-      result3.addEventListener("click", () => {
-        resultsClicked(2, data);
-
-        resultsBox.innerHTML = "";
-      });
-
-      result4.addEventListener("click", () => {
-        resultsClicked(3, data);
-
-        resultsBox.innerHTML = "";
-      });
-
-      result5.addEventListener("click", () => {
-        resultsClicked(4, data);
-
-        resultsBox.innerHTML = "";
-      });
-    }
-
-    const tableHeaders = document.querySelectorAll("#table-headers p").forEach(p => {
-      p.style.fontWeight = "bold"
-    })
-
-
-  })
-
-})
+  }
+);
 
 function geolocator() {
   if (navigator.geolocation) {
