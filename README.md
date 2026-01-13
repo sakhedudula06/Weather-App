@@ -43,3 +43,4 @@ HTML5, CSS3, JavaScript, REST APIs, JSON, Geolocation, Problem Solving
 Aspiring Software Developer – Mfuleni, Cape Town  
 
 GitHub: https://github.com/sakhedudula06
+Linkedin: www.linkedin.com/in/sakhekile-dudula
