@@ -1,4 +1,4 @@
-# 🌦️ Weather App  
+# Weather App  
 
 **Real-time Weather Web Application**
 
@@ -6,7 +6,7 @@ A clean, responsive weather application built to demonstrate practical front-end
 
 Built by **Sakhekile Dudula** as part of his journey into professional software development.
 
-## 🎯 Project Purpose
+## Project Purpose
 
 This project was created to demonstrate:
 
@@ -16,7 +16,7 @@ This project was created to demonstrate:
 - User-friendly UI design  
 - Clean, readable JavaScript  
 
-## 🧠 What This App Does
+## What This App Does
 
 Users can:
 - Search for any city worldwide  
@@ -25,11 +25,11 @@ Users can:
 - Understand real-time weather changes  
 - Use their location to get instant weather data  
 
-## 🛠️ Technologies & Skills Demonstrated
+## Technologies & Skills Demonstrated
 
 HTML5, CSS3, JavaScript, REST APIs, JSON, Geolocation, Problem Solving
 
-## ⚙️ How It Works
+## How It Works
 
 1. The user enters a city name  
 2. The app sends the name to the Open-Meteo Geocoding API  
@@ -37,10 +37,11 @@ HTML5, CSS3, JavaScript, REST APIs, JSON, Geolocation, Problem Solving
 4. These coordinates are used to fetch weather data  
 5. The UI updates with live information  
 
-## 👨‍💻 About the Developer
+## About the Developer
 
 **Sakhekile Dudula**  
 Aspiring Software Developer – Mfuleni, Cape Town  
 
 GitHub: https://github.com/sakhedudula06
+
 Linkedin: www.linkedin.com/in/sakhekile-dudula
