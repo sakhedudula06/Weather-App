@@ -2517,7 +2517,7 @@ async function getLocation(position) {
 
   try {
     const resGeo = await fetch(
-      `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${position.coords.latitude}&lng=${position.coords.longitude}&username=sakhe_dudula`
+      `https://secure.geonames.org/findNearbyPlaceNameJSON?lat=${position.coords.latitude}&lng=${position.coords.longitude}&username=sakhe_dudula`
     );
 
     if (!resGeo.ok) {
