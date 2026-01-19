@@ -2492,112 +2492,234 @@ const searchLocationOnKeyUp = searchWeather.addEventListener(
   }
 );
 
-function geolocator() {
-  if (navigator.geolocation) {
-    const myLoc = navigator.geolocation.getCurrentPosition(getLocation);
-    //console.log(myLoc);
-  } else {
-    ("Your browser doesn't support geolocation API");
+const btn = document.getElementById("use-location-btn");
+
+btn.addEventListener("click", () => {
+  navigator.geolocation.getCurrentPosition(getLocation, handleGeoError);
+});
+
+// function geolocator() {
+//   if (navigator.geolocation) {
+//     const myLoc = navigator.geolocation.getCurrentPosition(getLocation);
+//     //console.log(myLoc);
+//   } else {
+//     ("Your browser doesn't support geolocation API");
+//   }
+// }
+
+function handleGeoError(err) {
+  alert("Location access denied or unavailable.");
+  console.error(err);
+}
+
+async function getLocation(position) {
+  
+
+  try {
+    const resGeo = await fetch(
+      `https://api.geonames.org/findNearbyPlaceNameJSON?lat=${position.coords.latitude}&lng=${position.coords.longitude}&username=sakhe_dudula`
+    );
+
+    if (!resGeo.ok) {
+      throw new Error(`HTTP Error: ${resGeo.status}`);
+    }
+
+    const dataGeo = await resGeo.json();
+    console.log(dataGeo);
+
+    const locationBtnBox = document.getElementById("location-btn-box").innerHTML = "";
+
+    const geoLocationName = dataGeo.geonames[0].name;
+    const geoLocationCountryName = dataGeo.geonames[0].countryName;
+    const geolocationProvince = dataGeo.geonames[0].adminName1;
+    const geoLocationCountryCode = dataGeo.geonames[0].countryCode;
+
+    displayLocation.innerHTML = `${geoLocationName}, ${geolocationProvince}, ${geoLocationCountryName}`;
+
+    const resLoc = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${geoLocationName}&countryCode=${geoLocationCountryCode}`);
+
+    if (!resLoc.ok) {
+      throw new Error(`HTTP Error: ${resLoc.status}`);
+    }
+
+    const dataLoc = await resLoc.json();
+    console.log(dataLoc);
+
+
+    const resWeather = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${dataLoc.results[0].latitude}&longitude=${dataLoc.results[0].longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,rain,precipitation,wind_direction_10m,is_day`);
+
+    if (!resWeather.ok) {
+      throw new Error(`HTTP Error: ${resWeather.status}`);
+    }
+
+    const dataWeather = await resWeather.json();
+    console.log(dataWeather);
+
+    temperatureTxt.innerHTML =
+      `${Math.ceil(dataWeather.current.temperature_2m)}` +
+      `${dataWeather.current_units.temperature_2m}`;
+    temperatureInfo.innerHTML = `${weather_codes[dataWeather.current.weather_code].name
+      }`;
+
+    dataWeather.current.is_day === 1
+      ? (tempImage.src = `assets/${weather_codes[dataWeather.current.weather_code].icons.day
+        }`)
+      : (tempImage.src = `assets/${weather_codes[dataWeather.current.weather_code].icons.night
+        }`);
+
+    //Styles
+    weatherDetailsInfo.style.background = "white";
+    tempImage.style.width = "150px";
+    tempImage.style.height = "150px";
+    tempImage.style.objectFit = "cover";
+    weatherDetailsInfoBox.style.display = "flex";
+    weatherDetailsInfoBox.style.flexDirection = "column";
+    weatherDetailsInfoBox.style.backgroundColor = "#ffffff;";
+    weatherDetailsInfoBox.style.justifyContent = "center";
+    weatherDetailsInfoBox.style.alignItems = "flex-start";
+    weatherDetailsInfoBox.style.padding = "15px 0 15px 10px";
+    temperatureMoreInfo.style.backgroundColor = "white";
+
+    humidityText.innerHTML =
+      `${dataWeather.daily.precipitation_probability_max[0]}` +
+      `${dataWeather.daily_units.precipitation_probability_max}`;
+
+    windSpeed.innerHTML = `${dataWeather.current.wind_speed_10m}km/h`;
+
+    const degree = dataWeather.current.wind_direction_10m;
+
+    const directions = [
+      "North",
+      "Norht East",
+      "East",
+      "South East",
+      "South",
+      "South West",
+      "West",
+      "North West",
+    ];
+    const index = Math.round(degree / 45) % 8;
+    windDirection.innerHTML = `${directions[index]}`;
+    windDirectionImage.src = "images/icons8-weather-station-wind.gif";
+    windDirectionInfo.innerHTML = "Wind Direction";
+
+    humidityInfo.innerHTML = "Precipitation";
+    humidityImage.src = "images/icons8-precipitation (1).gif";
+
+    windSpeedInfo.innerHTML = "Wind Speed";
+    windImage.src = "images/icons8-windsock.gif";
+
+    rainImage.src = "images/icons8-rain-gauge.gif";
+    rainText.innerHTML =
+      `${dataWeather.current.rain}` + `${dataWeather.current_units.rain}`;
+    rainInfo.innerHTML = "Rain";
+
+    weeklyForecastText.innerHTML = "6 Day Forecast";
+
+    getDayOfTheWeek(dataWeather);
+
+  } catch (error) {
+    console.error("Fetch failed:", error.message);
   }
 }
 
-function getLocation(position) {
-  fetch(
-    `https://api.geonames.org/findNearbyPlaceNameJSON?lat=${position.coords.latitude}&lng=${position.coords.longitude}&username=sakhe_dudula`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
+// function getLocation(position) {
+//   fetch(
+//     `https://api.geonames.org/findNearbyPlaceNameJSON?lat=${position.coords.latitude}&lng=${position.coords.longitude}&username=sakhe_dudula`
+//   )
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
 
-      const geoLocationName = data.geonames[0].name;
-      const geoLocationCountryName = data.geonames[0].countryName;
-      const geolocationProvince = data.geonames[0].adminName1;
-      const geoLocationCountryCode = data.geonames[0].countryCode;
+//       const geoLocationName = data.geonames[0].name;
+//       const geoLocationCountryName = data.geonames[0].countryName;
+//       const geolocationProvince = data.geonames[0].adminName1;
+//       const geoLocationCountryCode = data.geonames[0].countryCode;
 
-      displayLocation.innerHTML = `${geoLocationName}, ${geolocationProvince}, ${geoLocationCountryName}`;
+//       displayLocation.innerHTML = `${geoLocationName}, ${geolocationProvince}, ${geoLocationCountryName}`;
 
-      fetch(
-        `https://geocoding-api.open-meteo.com/v1/search?name=${geoLocationName}&countryCode=${geoLocationCountryCode}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
+//       fetch(
+//         `https://geocoding-api.open-meteo.com/v1/search?name=${geoLocationName}&countryCode=${geoLocationCountryCode}`
+//       )
+//         .then((res) => res.json())
+//         .then((data) => {
+//           console.log(data);
 
-          fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${data.results[0].latitude}&longitude=${data.results[0].longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,rain,precipitation,wind_direction_10m,is_day`
-          )
-            .then((res) => res.json())
-            .then((data) => {
-              console.log(data);
+//           fetch(
+//             `https://api.open-meteo.com/v1/forecast?latitude=${data.results[0].latitude}&longitude=${data.results[0].longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,rain,precipitation,wind_direction_10m,is_day`
+//           )
+//             .then((res) => res.json())
+//             .then((data) => {
+//               console.log(data);
 
-              temperatureTxt.innerHTML =
-                `${Math.ceil(data.current.temperature_2m)}` +
-                `${data.current_units.temperature_2m}`;
-              temperatureInfo.innerHTML = `${weather_codes[data.current.weather_code].name
-                }`;
+//               temperatureTxt.innerHTML =
+//                 `${Math.ceil(data.current.temperature_2m)}` +
+//                 `${data.current_units.temperature_2m}`;
+//               temperatureInfo.innerHTML = `${weather_codes[data.current.weather_code].name
+//                 }`;
 
-              data.current.is_day === 1
-                ? (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day
-                  }`)
-                : (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night
-                  }`);
+//               data.current.is_day === 1
+//                 ? (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.day
+//                   }`)
+//                 : (tempImage.src = `assets/${weather_codes[data.current.weather_code].icons.night
+//                   }`);
 
-              //Styles
-              weatherDetailsInfo.style.background = "white";
-              tempImage.style.width = "150px";
-              tempImage.style.height = "150px";
-              tempImage.style.objectFit = "cover";
-              weatherDetailsInfoBox.style.display = "flex";
-              weatherDetailsInfoBox.style.flexDirection = "column";
-              weatherDetailsInfoBox.style.backgroundColor = "#ffffff;";
-              weatherDetailsInfoBox.style.justifyContent = "center";
-              weatherDetailsInfoBox.style.alignItems = "flex-start";
-              weatherDetailsInfoBox.style.padding = "15px 0 15px 10px";
-              temperatureMoreInfo.style.backgroundColor = "white";
+//               //Styles
+//               weatherDetailsInfo.style.background = "white";
+//               tempImage.style.width = "150px";
+//               tempImage.style.height = "150px";
+//               tempImage.style.objectFit = "cover";
+//               weatherDetailsInfoBox.style.display = "flex";
+//               weatherDetailsInfoBox.style.flexDirection = "column";
+//               weatherDetailsInfoBox.style.backgroundColor = "#ffffff;";
+//               weatherDetailsInfoBox.style.justifyContent = "center";
+//               weatherDetailsInfoBox.style.alignItems = "flex-start";
+//               weatherDetailsInfoBox.style.padding = "15px 0 15px 10px";
+//               temperatureMoreInfo.style.backgroundColor = "white";
 
-              humidityText.innerHTML =
-                `${data.daily.precipitation_probability_max[0]}` +
-                `${data.daily_units.precipitation_probability_max}`;
+//               humidityText.innerHTML =
+//                 `${data.daily.precipitation_probability_max[0]}` +
+//                 `${data.daily_units.precipitation_probability_max}`;
 
-              windSpeed.innerHTML = `${data.current.wind_speed_10m}km/h`;
+//               windSpeed.innerHTML = `${data.current.wind_speed_10m}km/h`;
 
-              const degree = data.current.wind_direction_10m;
+//               const degree = data.current.wind_direction_10m;
 
-              const directions = [
-                "North",
-                "Norht East",
-                "East",
-                "South East",
-                "South",
-                "South West",
-                "West",
-                "North West",
-              ];
-              const index = Math.round(degree / 45) % 8;
-              windDirection.innerHTML = `${directions[index]}`;
-              windDirectionImage.src = "images/icons8-weather-station-wind.gif";
-              windDirectionInfo.innerHTML = "Wind Direction";
+//               const directions = [
+//                 "North",
+//                 "Norht East",
+//                 "East",
+//                 "South East",
+//                 "South",
+//                 "South West",
+//                 "West",
+//                 "North West",
+//               ];
+//               const index = Math.round(degree / 45) % 8;
+//               windDirection.innerHTML = `${directions[index]}`;
+//               windDirectionImage.src = "images/icons8-weather-station-wind.gif";
+//               windDirectionInfo.innerHTML = "Wind Direction";
 
-              humidityInfo.innerHTML = "Precipitation";
-              humidityImage.src = "images/icons8-precipitation (1).gif";
+//               humidityInfo.innerHTML = "Precipitation";
+//               humidityImage.src = "images/icons8-precipitation (1).gif";
 
-              windSpeedInfo.innerHTML = "Wind Speed";
-              windImage.src = "images/icons8-windsock.gif";
+//               windSpeedInfo.innerHTML = "Wind Speed";
+//               windImage.src = "images/icons8-windsock.gif";
 
-              rainImage.src = "images/icons8-rain-gauge.gif";
-              rainText.innerHTML =
-                `${data.current.rain}` + `${data.current_units.rain}`;
-              rainInfo.innerHTML = "Rain";
+//               rainImage.src = "images/icons8-rain-gauge.gif";
+//               rainText.innerHTML =
+//                 `${data.current.rain}` + `${data.current_units.rain}`;
+//               rainInfo.innerHTML = "Rain";
 
-              weeklyForecastText.innerHTML = "6 Day Forecast";
+//               weeklyForecastText.innerHTML = "6 Day Forecast";
 
-              getDayOfTheWeek(data);
-            });
-        });
-    });
-}
+//               getDayOfTheWeek(data);
+//             });
+//         });
+//     });
+// }
 
-geolocator();
+// geolocator();
 
 submitButton.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {

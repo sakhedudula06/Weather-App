@@ -142,6 +142,7 @@ main {
   flex-direction: column;
   align-self: center;
   margin: 0 auto;
+  padding-bottom: 100px;
 }
 
 .main-weather {
@@ -160,7 +161,23 @@ main {
   color: gray;
 }
 
+#use-location-btn{
+  background-color: #13a4ec;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  max-width: 200px;
+  display: flex;
+  margin: auto;
+}
 
+#use-location-btn:hover{
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1)
+}
+
+#use-location-btn:active{
+  background-color: #0e6d9c;
+}
 
 .temperature-more-info {
   display: flex;
