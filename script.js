@@ -2517,7 +2517,7 @@ async function getLocation(position) {
 
   try {
     const resGeo = await fetch(
-      `https://api.geonames.org/findNearbyPlaceNameJSON?lat=${position.coords.latitude}&lng=${position.coords.longitude}&username=sakhe_dudula`
+      `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${position.coords.latitude}&lng=${position.coords.longitude}&username=sakhe_dudula`
     );
 
     if (!resGeo.ok) {
@@ -2527,7 +2527,8 @@ async function getLocation(position) {
     const dataGeo = await resGeo.json();
     console.log(dataGeo);
 
-    const locationBtnBox = document.getElementById("location-btn-box").innerHTML = "";
+    const locationBtnBox = document.getElementById("location-btn-box");
+    locationBtnBox.innerHTML = "";
 
     const geoLocationName = dataGeo.geonames[0].name;
     const geoLocationCountryName = dataGeo.geonames[0].countryName;
