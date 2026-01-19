@@ -2503,7 +2503,7 @@ function geolocator() {
 
 function getLocation(position) {
   fetch(
-    `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${position.coords.latitude}&lng=${position.coords.longitude}&username=sakhe_dudula`
+    `https://api.geonames.org/findNearbyPlaceNameJSON?lat=${position.coords.latitude}&lng=${position.coords.longitude}&username=sakhe_dudula`
   )
     .then((res) => res.json())
     .then((data) => {
