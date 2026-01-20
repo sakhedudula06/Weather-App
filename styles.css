@@ -280,7 +280,7 @@ main {
   gap: 10px;
 }
 
-@media (max-width: 575.98px) {
+@media (min-width: 0px) and (max-width: 575.98px) {
   header {
     width: 100%;
     display: flex;
