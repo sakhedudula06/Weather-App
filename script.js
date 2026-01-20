@@ -524,6 +524,7 @@ const cityName = document.getElementById("city-name");
 const admin1 = document.getElementById("admin1");
 const admin2 = document.getElementById("admin2");
 const resultsBox = document.getElementById("results-box");
+const locationBtnBox = document.getElementById("location-btn-box");
 
 const displayLocation = document.getElementById("location");
 const temperatureTxt = document.getElementById("temperature");
@@ -2063,7 +2064,8 @@ const searchLocationOnKeyUp = searchWeather.addEventListener(
   "keyup",
   function searchLocation(event) {
     const value = searchWeather.value;
-
+    locationBtnBox.innerHTML = "";
+    
     fetch(
       `https://geocoding-api.open-meteo.com/v1/search?name=${value}&count=5&language=en&format=json`
     )
@@ -2426,7 +2428,7 @@ async function getLocation(position) {
     const dataGeo = await resGeo.json();
     console.log(dataGeo);
 
-    const locationBtnBox = document.getElementById("location-btn-box");
+    
     locationBtnBox.innerHTML = "";
 
     const geoLocationName = dataGeo.geonames[0].name;
