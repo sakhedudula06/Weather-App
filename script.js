@@ -2028,7 +2028,7 @@ function resultsClicked(index, data) {
 
       const directions = [
         "North",
-        "North East",
+        "Nor East",
         "East",
         "South East",
         "South",
@@ -2036,6 +2036,7 @@ function resultsClicked(index, data) {
         "West",
         "North West",
       ];
+
       const directionIndex = Math.round(degree / 45) % 8;
       windDirection.innerHTML = `${directions[directionIndex]}`;
       windDirectionImage.src = "images/icons8-weather-station-wind.gif";
