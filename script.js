@@ -2028,7 +2028,7 @@ function resultsClicked(index, data) {
 
       const directions = [
         "North",
-        "Nor East",
+        "North East",
         "East",
         "South East",
         "South",
