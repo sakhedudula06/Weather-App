@@ -2484,7 +2484,6 @@ async function getLocation(position) {
     }
 
     const dataGeo = await resGeo.json();
-    console.log(dataGeo);
 
     locationBtnBox.innerHTML = "";
 
@@ -2505,7 +2504,6 @@ async function getLocation(position) {
     }
 
     const dataWeather = await resWeather.json();
-    console.log(dataWeather);
 
     temperatureTxt.innerHTML =
       `${Math.ceil(dataWeather.current.temperature_2m)}` +
