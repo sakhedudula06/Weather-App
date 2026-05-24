@@ -414,6 +414,7 @@ main {
   .temperature-more-info {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
 
   .weather-detailed-info {
@@ -422,6 +423,12 @@ main {
 
   .week-days-forecast-box {
     min-width: 100px;
+  }
+
+  .temperature-more-detailed-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
